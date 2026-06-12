@@ -9,7 +9,7 @@
   :root {
     --verde-bosque:#1a3a2a;--verde-medio:#2d6a4f;--verde-claro:#52b788;--verde-menta:#95d5b2;
     --crema:#f4f1e8;--crema-oscuro:#e8e3d5;--tierra:#8b5e3c;--dorado:#c9a84c;
-    --texto-oscuro:#1a1a1a;--texto-medio:#4a4a4a;
+    --rojo:#c0392b;--texto-oscuro:#1a1a1a;--texto-medio:#4a4a4a;
     --sombra:0 4px 24px rgba(26,58,42,0.13);--sombra-grande:0 12px 48px rgba(26,58,42,0.18);
   }
   *{margin:0;padding:0;box-sizing:border-box;}
@@ -39,7 +39,7 @@
   .user-avatar{width:52px;height:52px;background:linear-gradient(135deg,var(--verde-claro),var(--verde-bosque));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;}
   .user-name{font-weight:700;font-size:15px;color:var(--verde-bosque);}
   .user-reserve{font-size:13px;color:var(--texto-medio);margin-top:2px;}
-  .user-status{margin-left:auto;background:#e8f5f0;color:var(--verde-medio);font-size:11px;font-weight:700;padding:5px 10px;border-radius:20px;border:1px solid var(--verde-menta);white-space:nowrap;}
+  .user-status{margin-left:auto;font-size:11px;font-weight:700;padding:5px 10px;border-radius:20px;border:1px solid;white-space:nowrap;}
   .section-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--verde-bosque);margin:28px 20px 14px;}
   .accesos-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 20px;}
   .acceso-card{background:white;border-radius:16px;padding:18px 16px;display:flex;flex-direction:column;gap:10px;cursor:pointer;box-shadow:var(--sombra);border:1.5px solid transparent;transition:all 0.25s;}
@@ -72,7 +72,7 @@
   .upload-icon{font-size:36px;margin-bottom:8px;}
   .upload-text{font-size:13px;color:var(--texto-medio);}
   .upload-text strong{color:var(--verde-medio);}
-  .btn-primary{width:100%;padding:16px;background:linear-gradient(135deg,var(--verde-medio),var(--verde-bosque));color:white;border:none;border-radius:14px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;letter-spacing:0.3px;transition:all 0.25s;box-shadow:0 4px 16px rgba(45,106,79,0.35);margin-top:8px;}
+  .btn-primary{width:100%;padding:16px;background:linear-gradient(135deg,var(--verde-medio),var(--verde-bosque));color:white;border:none;border-radius:14px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all 0.25s;box-shadow:0 4px 16px rgba(45,106,79,0.35);margin-top:8px;}
   .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,106,79,0.45);}
   .form-section-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--verde-bosque);margin:24px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--verde-menta);display:flex;align-items:center;gap:8px;}
   .radio-group{display:flex;gap:10px;}
@@ -81,12 +81,10 @@
   .radio-item.selected{border-color:var(--verde-claro);background:#f0faf5;color:var(--verde-bosque);font-weight:600;}
   .conditional-field{display:none;}
   .conditional-field.visible{display:block;}
-
-  /* Score hint on select */
-  .score-hint{font-size:11px;color:var(--verde-medio);font-weight:600;margin-top:5px;padding:4px 10px;background:#f0faf5;border-radius:8px;display:none;}
+  .score-hint{font-size:11px;font-weight:600;margin-top:5px;padding:4px 10px;border-radius:8px;display:none;}
   .score-hint.visible{display:inline-block;}
 
-  /* RESULTADOS LISTA */
+  /* RESULTADOS */
   .predio-list-card{background:white;border-radius:16px;margin:0 20px 12px;padding:16px;box-shadow:var(--sombra);display:flex;align-items:center;gap:14px;cursor:pointer;border:1.5px solid transparent;transition:all 0.22s;}
   .predio-list-card:hover{border-color:var(--verde-claro);transform:translateY(-2px);box-shadow:var(--sombra-grande);}
   .predio-list-left{flex:1;min-width:0;}
@@ -111,9 +109,15 @@
   .detalle-section-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--verde-bosque);margin-bottom:12px;padding-bottom:8px;border-bottom:1.5px solid var(--crema-oscuro);}
   .detalle-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:6px 0;border-bottom:1px solid #f5f2ea;}
   .detalle-row:last-child{border-bottom:none;}
+  .detalle-row.zero-flag{background:#fff5f5;border-radius:6px;padding:6px 8px;margin:2px 0;}
   .detalle-key{font-size:12px;color:var(--texto-medio);font-weight:500;flex-shrink:0;max-width:50%;}
   .detalle-val{font-size:12px;color:var(--texto-oscuro);font-weight:600;text-align:right;}
-  .delete-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:calc(100% - 40px);margin:0 20px 16px;padding:12px;background:#fff0ed;color:#c0392b;border:1.5px solid #f5c6c2;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.2s;}
+  .detalle-val.zero{color:var(--rojo);}
+  .alerta-zero{background:#fff0ed;border:1.5px solid #f5c6c2;border-radius:12px;padding:14px 16px;margin-bottom:12px;display:flex;gap:10px;align-items:flex-start;}
+  .alerta-zero-icon{font-size:20px;flex-shrink:0;}
+  .alerta-zero-title{font-size:13px;font-weight:700;color:var(--rojo);margin-bottom:4px;}
+  .alerta-zero-text{font-size:12px;color:#8b2020;line-height:1.5;}
+  .delete-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:calc(100% - 40px);margin:0 20px 16px;padding:12px;background:#fff0ed;color:var(--rojo);border:1.5px solid #f5c6c2;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;}
   .delete-btn:hover{background:#ffe0da;}
 
   /* SCORES */
@@ -127,7 +131,7 @@
   /* MERCADO */
   .filtros-scroll{display:flex;gap:8px;padding:16px 20px;overflow-x:auto;scrollbar-width:none;}
   .filtros-scroll::-webkit-scrollbar{display:none;}
-  .filtro-btn{flex-shrink:0;padding:8px 18px;border-radius:20px;border:1.5px solid var(--crema-oscuro);background:white;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--texto-medio);cursor:pointer;transition:all 0.2s;white-space:nowrap;}
+  .filtro-btn{flex-shrink:0;padding:8px 18px;border-radius:20px;border:1.5px solid var(--crema-oscuro);background:white;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--texto-medio);cursor:pointer;white-space:nowrap;}
   .filtro-btn.active{background:var(--verde-bosque);color:white;border-color:var(--verde-bosque);}
   .mercado-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:0 20px 20px;}
   .producto-card{background:white;border-radius:18px;overflow:hidden;box-shadow:var(--sombra);cursor:pointer;transition:all 0.25s;}
@@ -197,7 +201,7 @@
       <div class="user-name" id="home-reserva-name">EcoRNSC Conecta</div>
       <div class="user-reserve" id="home-reserva-sub">📋 Registra tu primer predio</div>
     </div>
-    <div class="user-status" id="home-status">📝 Sin predios</div>
+    <div class="user-status" id="home-status" style="background:#f5f0e8;color:var(--tierra);border-color:var(--crema-oscuro);">📝 Sin predios</div>
   </div>
   <div class="section-title">Accesos Rápidos</div>
   <div class="accesos-grid">
@@ -223,30 +227,13 @@
   </div>
   <div class="form-container">
 
-    <!-- IDENTIFICACIÓN -->
     <div class="form-section-title">🏡 Identificación del Predio</div>
-    <div class="form-group">
-      <label class="form-label">Nombre del propietario <span>*</span></label>
-      <input id="f-propietario" class="form-input" type="text" placeholder="Ej. María Álvarez">
-    </div>
-    <div class="form-group">
-      <label class="form-label">Nombre del predio <span>*</span></label>
-      <input id="f-predio" class="form-input" type="text" placeholder="Ej. Finca El Manantial">
-    </div>
-    <div class="form-group">
-      <label class="form-label">Nombre de la reserva <span>*</span></label>
-      <input id="f-reserva" class="form-input" type="text" placeholder="Ej. Reserva Natural El Manantial">
-    </div>
-    <div class="form-group">
-      <label class="form-label">Vereda <span>*</span></label>
-      <input id="f-vereda" class="form-input" type="text" placeholder="Ej. Vereda La Esperanza">
-    </div>
-    <div class="form-group">
-      <label class="form-label">Área (Ha) <span>*</span></label>
-      <input id="f-area" class="form-input" type="number" placeholder="Ej. 25">
-    </div>
+    <div class="form-group"><label class="form-label">Nombre del propietario <span>*</span></label><input id="f-propietario" class="form-input" type="text" placeholder="Ej. María Álvarez"></div>
+    <div class="form-group"><label class="form-label">Nombre del predio <span>*</span></label><input id="f-predio" class="form-input" type="text" placeholder="Ej. Finca El Manantial"></div>
+    <div class="form-group"><label class="form-label">Nombre de la reserva <span>*</span></label><input id="f-reserva" class="form-input" type="text" placeholder="Ej. Reserva Natural El Manantial"></div>
+    <div class="form-group"><label class="form-label">Vereda <span>*</span></label><input id="f-vereda" class="form-input" type="text" placeholder="Ej. Vereda La Esperanza"></div>
+    <div class="form-group"><label class="form-label">Área (Ha) <span>*</span></label><input id="f-area" class="form-input" type="number" placeholder="Ej. 25"></div>
 
-    <!-- ESTADO LEGAL -->
     <div class="form-section-title">📋 Estado Legal y Ambiental</div>
     <div class="form-group">
       <label class="form-label">¿La RNSC está registrada? <span>*</span></label>
@@ -255,10 +242,7 @@
         <label class="radio-item" onclick="clearConditional(this,'campo-num-registro')"><input type="radio" name="rnsc-registrada" value="no"> No</label>
       </div>
     </div>
-    <div class="form-group conditional-field" id="campo-num-registro">
-      <label class="form-label">Número de registro</label>
-      <input id="f-num-registro" class="form-input" type="text" placeholder="Ej. RNSC-2021-0042">
-    </div>
+    <div class="form-group conditional-field" id="campo-num-registro"><label class="form-label">Número de registro</label><input id="f-num-registro" class="form-input" type="text" placeholder="Ej. RNSC-2021-0042"></div>
     <div class="form-group">
       <label class="form-label">¿Está siendo beneficiario de algún convenio de PSA? <span>*</span></label>
       <div class="radio-group">
@@ -266,37 +250,24 @@
         <label class="radio-item" onclick="clearConditional(this,'campo-convenio')"><input type="radio" name="psa-beneficiario" value="no"> No</label>
       </div>
     </div>
-    <div class="form-group conditional-field" id="campo-convenio">
-      <label class="form-label">¿De cuál convenio participa?</label>
-      <input id="f-convenio" class="form-input" type="text" placeholder="Ej. Convenio Cornare – Gobernación de Antioquia">
-    </div>
+    <div class="form-group conditional-field" id="campo-convenio"><label class="form-label">¿De cuál convenio participa?</label><input id="f-convenio" class="form-input" type="text" placeholder="Ej. Convenio Cornare – Gobernación de Antioquia"></div>
     <div class="form-group">
       <label class="form-label">Tipo de propiedad <span>*</span></label>
       <select id="f-tipo-propiedad" class="form-select">
         <option value="">Selecciona...</option>
-        <option>Propiedad privada individual</option>
-        <option>Propiedad privada colectiva</option>
-        <option>Propiedad familiar</option>
-        <option>Propiedad comunitaria</option>
-        <option>Otro</option>
+        <option>Propiedad privada individual</option><option>Propiedad privada colectiva</option>
+        <option>Propiedad familiar</option><option>Propiedad comunitaria</option><option>Otro</option>
       </select>
     </div>
-    <div class="form-group">
-      <label class="form-label">Número de escritura <span>*</span></label>
-      <input id="f-escritura" class="form-input" type="text" placeholder="Ej. Escritura 1234 de 2010">
-    </div>
+    <div class="form-group"><label class="form-label">Número de escritura <span>*</span></label><input id="f-escritura" class="form-input" type="text" placeholder="Ej. Escritura 1234 de 2010"></div>
 
-    <!-- INFO ECOSISTÉMICA -->
     <div class="form-section-title">🌿 Información Ecosistémica</div>
     <div class="form-group">
       <label class="form-label">Tipo de Ecosistema <span>*</span></label>
       <select id="f-ecosistema" class="form-select">
         <option value="">Selecciona...</option>
-        <option>🌳 Bosque tropical</option>
-        <option>🌿 Bosque andino</option>
-        <option>💧 Ecosistema hídrico</option>
-        <option>🌾 Vegetación de páramo</option>
-        <option>🐾 Hábitat de biodiversidad</option>
+        <option>🌳 Bosque tropical</option><option>🌿 Bosque andino</option>
+        <option>💧 Ecosistema hídrico</option><option>🌾 Vegetación de páramo</option><option>🐾 Hábitat de biodiversidad</option>
       </select>
     </div>
     <div class="form-group">
@@ -319,55 +290,50 @@
 
     <!-- VARIABLES ECOLÓGICAS -->
     <div class="form-section-title">🌿 Variables Ecológicas</div>
-
     <div class="form-group">
       <label class="form-label">1. Cobertura vegetal <span>*</span></label>
       <select id="f-cobertura" class="form-select" onchange="showScoreHint(this,'hint-cobertura')">
-        <option value="" data-score="0">Selecciona...</option>
-        <option value="Alta (>70%)" data-score="2">Alta (>70%)</option>
+        <option value="" data-score="-1">Selecciona...</option>
+        <option value="Alta (>70%)" data-score="2">Alta (&gt;70%)</option>
         <option value="Media (30-70%)" data-score="1">Media (30-70%)</option>
         <option value="Baja (<30%)" data-score="0">Baja (&lt;30%)</option>
       </select>
       <div class="score-hint" id="hint-cobertura"></div>
     </div>
-
     <div class="form-group">
       <label class="form-label">2. Presencia de bosque <span>*</span></label>
       <select id="f-bosque" class="form-select" onchange="showScoreHint(this,'hint-bosque')">
-        <option value="" data-score="0">Selecciona...</option>
+        <option value="" data-score="-1">Selecciona...</option>
         <option value="Sí" data-score="2">Sí</option>
         <option value="Parcial" data-score="1">Parcial</option>
         <option value="No" data-score="0">No</option>
       </select>
       <div class="score-hint" id="hint-bosque"></div>
     </div>
-
     <div class="form-group">
       <label class="form-label">3. Estado de conservación <span>*</span></label>
       <select id="f-conservacion" class="form-select" onchange="showScoreHint(this,'hint-conservacion')">
-        <option value="" data-score="0">Selecciona...</option>
+        <option value="" data-score="-1">Selecciona...</option>
         <option value="Conservado" data-score="2">Conservado</option>
         <option value="Intervenido" data-score="1">Intervenido</option>
         <option value="Degradado" data-score="0">Degradado</option>
       </select>
       <div class="score-hint" id="hint-conservacion"></div>
     </div>
-
     <div class="form-group">
       <label class="form-label">4. Biodiversidad percibida <span>*</span></label>
       <select id="f-biodiversidad" class="form-select" onchange="showScoreHint(this,'hint-biodiversidad')">
-        <option value="" data-score="0">Selecciona...</option>
+        <option value="" data-score="-1">Selecciona...</option>
         <option value="Alta" data-score="2">Alta</option>
         <option value="Media" data-score="1">Media</option>
         <option value="Baja" data-score="0">Baja</option>
       </select>
       <div class="score-hint" id="hint-biodiversidad"></div>
     </div>
-
     <div class="form-group">
       <label class="form-label">5. Fuentes hídricas <span>*</span></label>
       <select id="f-fuentes" class="form-select" onchange="showScoreHint(this,'hint-fuentes')">
-        <option value="" data-score="0">Selecciona...</option>
+        <option value="" data-score="-1">Selecciona...</option>
         <option value="Sí (nacimiento/quebrada)" data-score="2">Sí (nacimiento / quebrada)</option>
         <option value="Cercanas" data-score="1">Cercanas</option>
         <option value="No" data-score="0">No</option>
@@ -377,33 +343,30 @@
 
     <!-- VARIABLES SERVICIOS ECOSISTÉMICOS -->
     <div class="form-section-title">♻️ Variables Servicios Ecosistémicos</div>
-
     <div class="form-group">
       <label class="form-label">6. Regulación hídrica <span>*</span></label>
       <select id="f-regulacion" class="form-select" onchange="showScoreHint(this,'hint-regulacion')">
-        <option value="" data-score="0">Selecciona...</option>
+        <option value="" data-score="-1">Selecciona...</option>
         <option value="Alta" data-score="2">Alta</option>
         <option value="Media" data-score="1">Media</option>
         <option value="Baja" data-score="0">Baja</option>
       </select>
       <div class="score-hint" id="hint-regulacion"></div>
     </div>
-
     <div class="form-group">
       <label class="form-label">7. Valor paisajístico <span>*</span></label>
       <select id="f-paisaje" class="form-select" onchange="showScoreHint(this,'hint-paisaje')">
-        <option value="" data-score="0">Selecciona...</option>
+        <option value="" data-score="-1">Selecciona...</option>
         <option value="Alto (turismo viable)" data-score="2">Alto (turismo viable)</option>
         <option value="Medio" data-score="1">Medio</option>
         <option value="Bajo" data-score="0">Bajo</option>
       </select>
       <div class="score-hint" id="hint-paisaje"></div>
     </div>
-
     <div class="form-group">
       <label class="form-label">8. Conectividad ecológica <span>*</span></label>
       <select id="f-conectividad" class="form-select" onchange="showScoreHint(this,'hint-conectividad')">
-        <option value="" data-score="0">Selecciona...</option>
+        <option value="" data-score="-1">Selecciona...</option>
         <option value="Alta (cerca áreas protegidas)" data-score="2">Alta (cerca áreas protegidas)</option>
         <option value="Media" data-score="1">Media</option>
         <option value="Baja" data-score="0">Baja</option>
@@ -413,33 +376,30 @@
 
     <!-- VARIABLES USOS DEL SUELO -->
     <div class="form-section-title">🌾 Variables Usos del Suelo</div>
-
     <div class="form-group">
       <label class="form-label">9. Uso del suelo actual <span>*</span></label>
       <select id="f-uso-suelo" class="form-select" onchange="showScoreHint(this,'hint-uso-suelo')">
-        <option value="" data-score="0">Selecciona...</option>
+        <option value="" data-score="-1">Selecciona...</option>
         <option value="Conservación / sostenible" data-score="2">Conservación / sostenible</option>
         <option value="Uso mixto" data-score="1">Uso mixto</option>
         <option value="Intensivo" data-score="0">Intensivo</option>
       </select>
       <div class="score-hint" id="hint-uso-suelo"></div>
     </div>
-
     <div class="form-group">
       <label class="form-label">10. Prácticas sostenibles <span>*</span></label>
       <select id="f-practicas" class="form-select" onchange="showScoreHint(this,'hint-practicas')">
-        <option value="" data-score="0">Selecciona...</option>
+        <option value="" data-score="-1">Selecciona...</option>
         <option value="Implementadas" data-score="2">Implementadas</option>
         <option value="Parciales" data-score="1">Parciales</option>
         <option value="No existen" data-score="0">No existen</option>
       </select>
       <div class="score-hint" id="hint-practicas"></div>
     </div>
-
     <div class="form-group">
       <label class="form-label">11. Presión ambiental <span>*</span></label>
       <select id="f-presion" class="form-select" onchange="showScoreHint(this,'hint-presion')">
-        <option value="" data-score="0">Selecciona...</option>
+        <option value="" data-score="-1">Selecciona...</option>
         <option value="Baja" data-score="2">Baja</option>
         <option value="Media" data-score="1">Media</option>
         <option value="Alta" data-score="0">Alta</option>
@@ -452,7 +412,7 @@
     <div class="form-group">
       <label class="form-label">Capacidad productiva <span>*</span></label>
       <select id="f-capacidad" class="form-select" onchange="showScoreHint(this,'hint-capacidad')">
-        <option value="" data-score="0">Selecciona...</option>
+        <option value="" data-score="-1">Selecciona...</option>
         <option value="Alta" data-score="2">Alta</option>
         <option value="Media" data-score="1">Media</option>
         <option value="Baja" data-score="0">Baja</option>
@@ -462,7 +422,7 @@
     <div class="form-group">
       <label class="form-label">Potencial turístico <span>*</span></label>
       <select id="f-turismo" class="form-select" onchange="showScoreHint(this,'hint-turismo')">
-        <option value="" data-score="0">Selecciona...</option>
+        <option value="" data-score="-1">Selecciona...</option>
         <option value="Alto" data-score="2">Alto</option>
         <option value="Medio" data-score="1">Medio</option>
         <option value="Bajo" data-score="0">Bajo</option>
@@ -472,7 +432,7 @@
     <div class="form-group">
       <label class="form-label">Tipo de servicio ecosistémico predominante <span>*</span></label>
       <select id="f-tipo-servicio" class="form-select" onchange="showScoreHint(this,'hint-tipo-servicio')">
-        <option value="" data-score="0">Selecciona...</option>
+        <option value="" data-score="-1">Selecciona...</option>
         <option value="Regulación hídrica" data-score="3">💧 Regulación hídrica</option>
         <option value="Conservación de biodiversidad" data-score="3">🦋 Conservación de biodiversidad</option>
         <option value="Captura de carbono" data-score="3">🌳 Captura de carbono</option>
@@ -483,10 +443,7 @@
       <div class="score-hint" id="hint-tipo-servicio"></div>
     </div>
 
-    <div class="form-group">
-      <label class="form-label">Descripción general del predio</label>
-      <textarea id="f-descripcion" class="form-textarea" placeholder="Describe las características más importantes de tu reserva..."></textarea>
-    </div>
+    <div class="form-group"><label class="form-label">Descripción general del predio</label><textarea id="f-descripcion" class="form-textarea" placeholder="Describe las características más importantes de tu reserva..."></textarea></div>
     <div class="form-group">
       <label class="form-label">Fotografías del predio</label>
       <div class="upload-area"><div class="upload-icon">📷</div><div class="upload-text"><strong>Toca para subir fotos</strong><br>Bosque, fuentes de agua, fauna</div></div>
@@ -557,14 +514,8 @@
     <div class="impacto-item"><div class="impacto-num">3</div><div class="impacto-label">Nacimientos agua</div></div>
     <div class="impacto-item"><div class="impacto-num">87</div><div class="impacto-label">Sp. flora/fauna</div></div>
   </div>
-  <div class="historia-card">
-    <div class="historia-title">🌿 Historia de la Reserva</div>
-    <div class="historia-text">La Reserva El Manantial nació de la decisión de la familia Álvarez de proteger los bosques y nacimientos de agua que rodean su predio. Hoy conserva más de 42 hectáreas de bosque andino en las estribaciones del río Nare.</div>
-  </div>
-  <div class="contacto-bar">
-    <button class="contacto-btn wa">📱 WhatsApp</button>
-    <button class="contacto-btn ig">📷 Instagram</button>
-  </div>
+  <div class="historia-card"><div class="historia-title">🌿 Historia de la Reserva</div><div class="historia-text">La Reserva El Manantial nació de la decisión de la familia Álvarez de proteger los bosques y nacimientos de agua que rodean su predio.</div></div>
+  <div class="contacto-bar"><button class="contacto-btn wa">📱 WhatsApp</button><button class="contacto-btn ig">📷 Instagram</button></div>
   <div class="servicios-perfil">
     <div class="section-title" style="margin-left:0;margin-top:0;">Productos y Servicios</div>
     <div class="servicio-row"><div class="servicio-row-icon">🏕️</div><div><div class="servicio-row-name">Sendero Nocturno</div><div class="servicio-row-desc">Observación de biodiversidad nocturna</div></div><div class="servicio-row-price">$45k</div></div>
@@ -590,7 +541,7 @@
     <div class="form-group"><label class="form-label">Tipo de publicación</label><select class="form-select"><option>🏕️ Experiencia ecoturística</option><option>🧺 Producto sostenible</option><option>🌱 Servicio ambiental</option></select></div>
     <div class="form-group"><label class="form-label">Nombre</label><input class="form-input" type="text" placeholder="Ej. Recorrido por nacimiento de agua"></div>
     <div class="form-group"><label class="form-label">Precio</label><input class="form-input" type="text" placeholder="Ej. $50.000 por persona"></div>
-    <div class="form-group"><label class="form-label">Descripción</label><textarea class="form-textarea" placeholder="¿Qué incluye? ¿Cuál es su valor ambiental?"></textarea></div>
+    <div class="form-group"><label class="form-label">Descripción</label><textarea class="form-textarea" placeholder="¿Qué incluye?"></textarea></div>
     <button class="btn-primary" onclick="closeModal()">✅ Publicar en Mercado Verde</button>
   </div>
 </div>
@@ -598,6 +549,15 @@
 <div class="toast" id="toast"></div>
 
 <script>
+// ── Etiquetas de variables para mostrar en alertas ──
+const VAR_LABELS = {
+  s1:'Cobertura vegetal', s2:'Presencia de bosque', s3:'Estado de conservación',
+  s4:'Biodiversidad percibida', s5:'Fuentes hídricas',
+  s6:'Regulación hídrica', s7:'Valor paisajístico', s8:'Conectividad ecológica',
+  s9:'Uso del suelo actual', s10:'Prácticas sostenibles', s11:'Presión ambiental',
+  s12:'Capacidad productiva', s13:'Potencial turístico', s14:'Tipo de servicio ecosistémico'
+};
+
 // ── NAVEGACIÓN ──
 function goPage(id) {
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
@@ -621,60 +581,90 @@ function clearConditional(lbl, fid) {
   document.getElementById(fid).classList.remove('visible');
 }
 
-// ── SCORE HINT en tiempo real ──
+// ── SCORE HINT ──
 function showScoreHint(sel, hintId) {
-  const opt = sel.options[sel.selectedIndex];
+  const opt   = sel.options[sel.selectedIndex];
   const score = parseInt(opt.dataset.score ?? -1);
-  const hint = document.getElementById(hintId);
-  if (!hint || score < 0 || !opt.value) { if(hint) hint.classList.remove('visible'); return; }
-  const labels = ['0 pts — bajo impacto', '1 pt — impacto medio', '2 pts — alto impacto', '3 pts — máximo impacto'];
+  const hint  = document.getElementById(hintId);
+  if (!hint || score < 0 || !opt.value) { if (hint) hint.classList.remove('visible'); return; }
+  const labels = ['0 pts — ⚠️ CRITERIO NO APTO','1 pt — impacto medio','2 pts — alto impacto','3 pts — máximo impacto'];
   const colors  = ['#c0392b','#c9a84c','#2d6a4f','#1a3a2a'];
   const bgs     = ['#fff0ed','#fef9e7','#e8f5f0','#d4edda'];
-  hint.textContent = '⚡ ' + (labels[score] || score+' pts');
-  hint.style.color = colors[score] || '#1a3a2a';
-  hint.style.background = bgs[score] || '#d4edda';
+  hint.textContent = '⚡ ' + (labels[score] ?? score+' pts');
+  hint.style.color      = colors[score] ?? '#1a3a2a';
+  hint.style.background = bgs[score]    ?? '#d4edda';
   hint.classList.add('visible');
 }
 
 // ── MODAL ──
 function openModal() { document.getElementById('modal').classList.add('show'); }
-function closeModal(e) { if(!e||e.target===document.getElementById('modal')) document.getElementById('modal').classList.remove('show'); }
-function setFiltro(btn) { document.querySelectorAll('.filtro-btn').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
+function closeModal(e) { if (!e || e.target === document.getElementById('modal')) document.getElementById('modal').classList.remove('show'); }
+function setFiltro(btn) { document.querySelectorAll('.filtro-btn').forEach(b => b.classList.remove('active')); btn.classList.add('active'); }
 
 // ── TOAST ──
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent = msg; t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2800);
+  setTimeout(() => t.classList.remove('show'), 3000);
 }
 
-// ── HELPER: score de un select ──
+// ── HELPER: score de un select (retorna -1 si no hay selección) ──
 function optScore(id) {
   const el = document.getElementById(id);
-  if (!el || el.selectedIndex <= 0) return 0;
+  if (!el || !el.value) return -1; // no respondido
   return parseInt(el.options[el.selectedIndex].dataset.score ?? 0);
 }
 
 // ── SCORING ──
-// Variables ecológicas   (1-5):  max 5×2 = 10  → pct = (sum/10)*100
-// Variables servicios    (6-8):  max 3×2 =  6  → pct = (sum/6)*100
-// Variables uso suelo   (9-11):  max 3×2 =  6  → pct = (sum/6)*100
-// Socioproductivo: score auxiliar (no ponderado igual)
+// Regla de no aptitud: si CUALQUIER variable respondida tiene score 0 → no apto
+// Ecológico   s1–s5:  max 10  → (sum/10)*100
+// Servicios   s6–s8:  max  6  → (sum/6)*100
+// Uso suelo   s9–s11: max  6  → (sum/6)*100
+// Socioprod.  s12–s14: max 7  → (sum/7)*100
 function calcularPuntaje(p) {
-  const ecoRaw  = p.s1 + p.s2 + p.s3 + p.s4 + p.s5;
-  const servRaw = p.s6 + p.s7 + p.s8;
-  const usoRaw  = p.s9 + p.s10 + p.s11;
+  // Variables con su puntaje (sólo las respondidas entran al denominador)
+  const scored = [
+    { key:'s1',  val:p.cobertura,    score:p.s1  },
+    { key:'s2',  val:p.bosque,       score:p.s2  },
+    { key:'s3',  val:p.conservacion, score:p.s3  },
+    { key:'s4',  val:p.biodiversidad,score:p.s4  },
+    { key:'s5',  val:p.fuentes,      score:p.s5  },
+    { key:'s6',  val:p.regulacion,   score:p.s6  },
+    { key:'s7',  val:p.paisaje,      score:p.s7  },
+    { key:'s8',  val:p.conectividad, score:p.s8  },
+    { key:'s9',  val:p.usoSuelo,     score:p.s9  },
+    { key:'s10', val:p.practicas,    score:p.s10 },
+    { key:'s11', val:p.presion,      score:p.s11 },
+    { key:'s12', val:p.capacidad,    score:p.s12 },
+    { key:'s13', val:p.turismo,      score:p.s13 },
+    { key:'s14', val:p.tipoServicio, score:p.s14 },
+  ];
+
+  // Detectar variables con puntaje 0 explícito (respondidas y con score 0)
+  const variablesZero = scored
+    .filter(v => v.val && v.val !== '' && (v.score === 0 || v.score === '0'))
+    .map(v => v.key);
+
+  const tieneZero = variablesZero.length > 0;
+
+  // Puntajes por categoría (ignorar -1 = no respondido)
+  const s = (k) => (p[k] !== undefined && p[k] >= 0) ? p[k] : 0;
+
+  const ecoRaw  = s('s1')+s('s2')+s('s3')+s('s4')+s('s5');
+  const servRaw = s('s6')+s('s7')+s('s8');
+  const usoRaw  = s('s9')+s('s10')+s('s11');
+  const socRaw  = s('s12')+s('s13')+s('s14');
 
   const ecologico      = Math.round((ecoRaw  / 10) * 100);
   const servicios      = Math.round((servRaw /  6) * 100);
   const usoSuelo       = Math.round((usoRaw  /  6) * 100);
+  const socioproductivo= Math.round((socRaw  /  7) * 100);
+  const total          = Math.round((ecologico+servicios+usoSuelo+socioproductivo)/4);
 
-  // Socioproductivo: s12(max 2) + s13(max 2) + s14(max 3) = max 7
-  const socRaw = (p.s12||0) + (p.s13||0) + (p.s14||0);
-  const socioproductivo = Math.round((socRaw / 7) * 100);
+  // Apto = puntaje >= 60 Y ninguna variable con score 0
+  const esApto = !tieneZero && total >= 60;
 
-  const total = Math.round((ecologico + servicios + usoSuelo + socioproductivo) / 4);
-  return { ecologico, servicios, usoSuelo, socioproductivo, total };
+  return { ecologico, servicios, usoSuelo, socioproductivo, total, esApto, variablesZero };
 }
 
 // ── SUBMIT ──
@@ -700,23 +690,21 @@ function submitForm() {
     ecosistema: document.getElementById('f-ecosistema').value,
     serviciosEco: [...document.querySelectorAll('.cb-servicios:checked')].map(c=>c.value),
     iniciativas: [...document.querySelectorAll('.cb-iniciativas:checked')].map(c=>c.value),
-    // Valores textuales
-    cobertura:    document.getElementById('f-cobertura').value,
-    bosque:       document.getElementById('f-bosque').value,
-    conservacion: document.getElementById('f-conservacion').value,
-    biodiversidad:document.getElementById('f-biodiversidad').value,
-    fuentes:      document.getElementById('f-fuentes').value,
-    regulacion:   document.getElementById('f-regulacion').value,
-    paisaje:      document.getElementById('f-paisaje').value,
-    conectividad: document.getElementById('f-conectividad').value,
-    usoSuelo:     document.getElementById('f-uso-suelo').value,
-    practicas:    document.getElementById('f-practicas').value,
-    presion:      document.getElementById('f-presion').value,
-    capacidad:    document.getElementById('f-capacidad').value,
-    turismo:      document.getElementById('f-turismo').value,
-    tipoServicio: document.getElementById('f-tipo-servicio').value,
-    descripcion:  document.getElementById('f-descripcion').value.trim(),
-    // Puntajes individuales (0-2)
+    cobertura:     document.getElementById('f-cobertura').value,
+    bosque:        document.getElementById('f-bosque').value,
+    conservacion:  document.getElementById('f-conservacion').value,
+    biodiversidad: document.getElementById('f-biodiversidad').value,
+    fuentes:       document.getElementById('f-fuentes').value,
+    regulacion:    document.getElementById('f-regulacion').value,
+    paisaje:       document.getElementById('f-paisaje').value,
+    conectividad:  document.getElementById('f-conectividad').value,
+    usoSuelo:      document.getElementById('f-uso-suelo').value,
+    practicas:     document.getElementById('f-practicas').value,
+    presion:       document.getElementById('f-presion').value,
+    capacidad:     document.getElementById('f-capacidad').value,
+    turismo:       document.getElementById('f-turismo').value,
+    tipoServicio:  document.getElementById('f-tipo-servicio').value,
+    descripcion:   document.getElementById('f-descripcion').value.trim(),
     s1:  optScore('f-cobertura'),
     s2:  optScore('f-bosque'),
     s3:  optScore('f-conservacion'),
@@ -740,7 +728,10 @@ function submitForm() {
   localStorage.setItem('ecornsc_predios', JSON.stringify(predios));
 
   resetForm(); updateBadge(); updateHome();
-  showToast('✅ Predio guardado correctamente');
+  const msg = predio.puntajes.esApto
+    ? '✅ Predio guardado — Apto para PSA'
+    : '⚠️ Predio guardado — No apto para PSA';
+  showToast(msg);
   goPage('page-resultados');
 }
 
@@ -773,24 +764,27 @@ function renderListaPredios() {
   }
 
   strip.style.display = 'grid';
-  const aptos = predios.filter(p=>(p.puntajes?.total||0)>=60).length;
-  const prom  = Math.round(predios.reduce((a,p)=>a+(p.puntajes?.total||0),0)/predios.length);
+  const aptos = predios.filter(p => p.puntajes?.esApto).length;
+  const prom  = Math.round(predios.reduce((a,p) => a+(p.puntajes?.total||0), 0) / predios.length);
   document.getElementById('res-total').textContent = predios.length;
   document.getElementById('res-aptos').textContent = aptos;
   document.getElementById('res-prom').textContent  = prom;
 
-  container.innerHTML = predios.map((p,i)=>{
-    const s    = p.puntajes||{total:0};
-    const apta = s.total >= 60;
-    const col  = s.total>=75?'var(--verde-medio)':s.total>=50?'var(--dorado)':'var(--tierra)';
+  container.innerHTML = predios.map((p,i) => {
+    const s    = p.puntajes || { total:0, esApto:false };
+    const apta = s.esApto;
+    // Color del puntaje: verde si apto, rojo si tiene ceros, dorado si puntaje medio sin ceros
+    const col = apta ? 'var(--verde-medio)' : (s.variablesZero?.length ? 'var(--rojo)' : 'var(--dorado)');
+    const tagBg  = apta ? '#e8f5f0' : (s.variablesZero?.length ? '#fff0ed' : '#fef9e7');
+    const tagCol = apta ? 'var(--verde-medio)' : (s.variablesZero?.length ? 'var(--rojo)' : 'var(--dorado)');
+    const tagTxt = apta ? '✅ Apto PSA' : (s.variablesZero?.length ? '🚫 No apto' : '⚠️ En evaluación');
+
     return `<div class="predio-list-card" onclick="verDetalle(${i})">
       <div class="predio-list-left">
         <div class="predio-list-name">${p.reserva||'Sin nombre'}</div>
         <div class="predio-list-sub">👤 ${p.propietario||'—'}</div>
         <div class="predio-list-sub">📍 ${p.vereda||'—'} · 🌿 ${p.area||'—'} Ha · ${p.fecha||''}</div>
-        <span class="predio-status-tag" style="background:${apta?'#e8f5f0':'#fef9e7'};color:${apta?'var(--verde-medio)':'var(--dorado)'};">
-          ${apta?'✅ Apta PSA':'⚠️ En evaluación'}
-        </span>
+        <span class="predio-status-tag" style="background:${tagBg};color:${tagCol};">${tagTxt}</span>
       </div>
       <div style="text-align:center;flex-shrink:0;">
         <div class="predio-list-score" style="color:${col};">${s.total}</div>
@@ -803,26 +797,42 @@ function renderListaPredios() {
 // ── DETALLE ──
 function verDetalle(idx) {
   const predios = JSON.parse(localStorage.getItem('ecornsc_predios')||'[]');
-  const p = predios[idx]; if(!p) return;
+  const p = predios[idx]; if (!p) return;
 
   document.getElementById('vista-lista').style.display  = 'none';
   document.getElementById('vista-detalle').style.display = 'block';
   window.scrollTo(0,0);
 
-  const s    = p.puntajes||{ecologico:0,servicios:0,usoSuelo:0,socioproductivo:0,total:0};
-  const apta = s.total >= 60;
-  const hdr  = apta?'linear-gradient(135deg,#2d6a4f,#52b788)':'linear-gradient(135deg,#8b5e3c,#c9a84c)';
+  const s    = p.puntajes || { ecologico:0,servicios:0,usoSuelo:0,socioproductivo:0,total:0,esApto:false,variablesZero:[] };
+  const apta = s.esApto;
 
-  // Raw scores breakdown
-  const detEco  = `${p.s1??'—'}+${p.s2??'—'}+${p.s3??'—'}+${p.s4??'—'}+${p.s5??'—'} = ${(p.s1||0)+(p.s2||0)+(p.s3||0)+(p.s4||0)+(p.s5||0)}/10`;
-  const detServ = `${p.s6??'—'}+${p.s7??'—'}+${p.s8??'—'} = ${(p.s6||0)+(p.s7||0)+(p.s8||0)}/6`;
-  const detUso  = `${p.s9??'—'}+${p.s10??'—'}+${p.s11??'—'} = ${(p.s9||0)+(p.s10||0)+(p.s11||0)}/6`;
-  const detSoc  = `${p.s12??'—'}+${p.s13??'—'}+${p.s14??'—'} = ${(p.s12||0)+(p.s13||0)+(p.s14||0)}/7`;
+  // Header color: verde=apto, rojo=no apto por cero, tierra=en evaluación
+  const hdr = apta
+    ? 'linear-gradient(135deg,#2d6a4f,#52b788)'
+    : (s.variablesZero?.length ? 'linear-gradient(135deg,#8b2020,#c0392b)' : 'linear-gradient(135deg,#8b5e3c,#c9a84c)');
+
+  const badge = apta ? '✅ APTO PARA PSA'
+    : (s.variablesZero?.length ? '🚫 NO APTO PARA PSA' : '⚠️ EN EVALUACIÓN');
+
+  // Alerta de variables con cero
+  const alertaZero = s.variablesZero?.length ? `
+    <div class="alerta-zero">
+      <div class="alerta-zero-icon">🚫</div>
+      <div>
+        <div class="alerta-zero-title">Criterios que impiden la aptitud PSA</div>
+        <div class="alerta-zero-text">Las siguientes variables obtuvieron puntaje 0, lo que descalifica automáticamente el predio:<br><strong>${s.variablesZero.map(k => VAR_LABELS[k]||k).join(', ')}</strong></div>
+      </div>
+    </div>` : '';
+
+  const detEco  = `${nn(p.s1)}+${nn(p.s2)}+${nn(p.s3)}+${nn(p.s4)}+${nn(p.s5)} = ${sum(p,'s1','s2','s3','s4','s5')}/10`;
+  const detServ = `${nn(p.s6)}+${nn(p.s7)}+${nn(p.s8)} = ${sum(p,'s6','s7','s8')}/6`;
+  const detUso  = `${nn(p.s9)}+${nn(p.s10)}+${nn(p.s11)} = ${sum(p,'s9','s10','s11')}/6`;
+  const detSoc  = `${nn(p.s12)}+${nn(p.s13)}+${nn(p.s14)} = ${sum(p,'s12','s13','s14')}/7`;
 
   document.getElementById('detalle-contenido').innerHTML = `
     <div style="background:${hdr};padding:24px;color:white;text-align:center;">
-      <div style="font-size:48px;margin-bottom:10px;">${apta?'🏅':'📋'}</div>
-      <div style="display:inline-block;background:white;color:${apta?'var(--verde-medio)':'var(--tierra)'};font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:6px 18px;border-radius:20px;">${apta?'✅ APTA PARA PSA':'⚠️ EN EVALUACIÓN'}</div>
+      <div style="font-size:48px;margin-bottom:10px;">${apta?'🏅':(s.variablesZero?.length?'🚫':'📋')}</div>
+      <div style="display:inline-block;background:white;color:${apta?'var(--verde-medio)':'var(--rojo)'};font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:6px 18px;border-radius:20px;">${badge}</div>
       <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-top:10px;">${p.reserva||'Sin nombre'}</div>
       <div style="font-size:12px;opacity:0.8;margin-top:4px;">${p.nombrePredio||''} · ${p.fecha||''}</div>
     </div>
@@ -833,6 +843,7 @@ function verDetalle(idx) {
       ${mkScore('🤝 Socio-prod.',s.socioproductivo,'linear-gradient(90deg,#8b5e3c,#c9a84c)',detSoc)}
     </div>
     <div style="padding:16px 20px 0;">
+      ${alertaZero}
       ${mkSec('🏡 Identificación del Predio',[
         ['Propietario',p.propietario],['Nombre del predio',p.nombrePredio],
         ['Nombre de la reserva',p.reserva],['Vereda',p.vereda],
@@ -845,35 +856,38 @@ function verDetalle(idx) {
         p.psaBeneficiario==='si'?['Convenio',p.convenio]:null,
         ['Tipo de propiedad',p.tipoPropiedad],['N° escritura',p.escritura]
       ])}
-      ${mkSec('🌿 Variables Ecológicas',[
-        ['1. Cobertura vegetal',p.cobertura?`${p.cobertura} (${p.s1??'—'} pts)`:null],
-        ['2. Presencia de bosque',p.bosque?`${p.bosque} (${p.s2??'—'} pts)`:null],
-        ['3. Estado de conservación',p.conservacion?`${p.conservacion} (${p.s3??'—'} pts)`:null],
-        ['4. Biodiversidad percibida',p.biodiversidad?`${p.biodiversidad} (${p.s4??'—'} pts)`:null],
-        ['5. Fuentes hídricas',p.fuentes?`${p.fuentes} (${p.s5??'—'} pts)`:null],
-      ])}
-      ${mkSec('♻️ Variables Servicios Ecosistémicos',[
-        ['6. Regulación hídrica',p.regulacion?`${p.regulacion} (${p.s6??'—'} pts)`:null],
-        ['7. Valor paisajístico',p.paisaje?`${p.paisaje} (${p.s7??'—'} pts)`:null],
-        ['8. Conectividad ecológica',p.conectividad?`${p.conectividad} (${p.s8??'—'} pts)`:null],
-      ])}
-      ${mkSec('🌾 Variables Usos del Suelo',[
-        ['9. Uso del suelo',p.usoSuelo?`${p.usoSuelo} (${p.s9??'—'} pts)`:null],
-        ['10. Prácticas sostenibles',p.practicas?`${p.practicas} (${p.s10??'—'} pts)`:null],
-        ['11. Presión ambiental',p.presion?`${p.presion} (${p.s11??'—'} pts)`:null],
-      ])}
-      ${mkSec('🤝 Variables Socioproductivas',[
-        ['Capacidad productiva',p.capacidad?`${p.capacidad} (${p.s12??'—'} pts)`:null],
-        ['Potencial turístico',p.turismo?`${p.turismo} (${p.s13??'—'} pts)`:null],
-        ['Tipo de servicio predominante',p.tipoServicio?`${p.tipoServicio} (${p.s14??'—'} pts)`:null],
-      ])}
+      ${mkSecScored('🌿 Variables Ecológicas',[
+        ['1. Cobertura vegetal',p.cobertura,p.s1],
+        ['2. Presencia de bosque',p.bosque,p.s2],
+        ['3. Estado de conservación',p.conservacion,p.s3],
+        ['4. Biodiversidad percibida',p.biodiversidad,p.s4],
+        ['5. Fuentes hídricas',p.fuentes,p.s5],
+      ], s.variablesZero)}
+      ${mkSecScored('♻️ Variables Servicios Ecosistémicos',[
+        ['6. Regulación hídrica',p.regulacion,p.s6],
+        ['7. Valor paisajístico',p.paisaje,p.s7],
+        ['8. Conectividad ecológica',p.conectividad,p.s8],
+      ], s.variablesZero)}
+      ${mkSecScored('🌾 Variables Usos del Suelo',[
+        ['9. Uso del suelo',p.usoSuelo,p.s9],
+        ['10. Prácticas sostenibles',p.practicas,p.s10],
+        ['11. Presión ambiental',p.presion,p.s11],
+      ], s.variablesZero)}
+      ${mkSecScored('🤝 Variables Socioproductivas',[
+        ['Capacidad productiva',p.capacidad,p.s12],
+        ['Potencial turístico',p.turismo,p.s13],
+        ['Tipo de servicio predominante',p.tipoServicio,p.s14],
+      ], s.variablesZero)}
       ${p.descripcion?`<div class="detalle-section"><div class="detalle-section-title">📝 Descripción</div><p style="font-size:13px;color:var(--texto-medio);line-height:1.7;">${p.descripcion}</p></div>`:''}
     </div>`;
 
   document.getElementById('btn-eliminar').onclick = () => eliminarPredio(idx);
 }
 
-function mkScore(label,val,gradient,sub) {
+function nn(v) { return (v !== undefined && v >= 0) ? v : '—'; }
+function sum(p, ...keys) { return keys.reduce((a,k) => a + (p[k] >= 0 ? p[k] : 0), 0); }
+
+function mkScore(label, val, gradient, sub) {
   return `<div class="score-item">
     <div class="score-label">${label}</div>
     <div class="score-bar-bg"><div class="score-bar" style="width:${val}%;background:${gradient};"></div></div>
@@ -882,10 +896,24 @@ function mkScore(label,val,gradient,sub) {
   </div>`;
 }
 
-function mkSec(titulo,campos) {
+function mkSec(titulo, campos) {
   const filas = campos.filter(Boolean).filter(([,v])=>v)
     .map(([k,v])=>`<div class="detalle-row"><span class="detalle-key">${k}</span><span class="detalle-val">${v}</span></div>`)
     .join('');
+  return filas ? `<div class="detalle-section"><div class="detalle-section-title">${titulo}</div>${filas}</div>` : '';
+}
+
+// Sección con scores coloreados (rojo si es 0)
+function mkSecScored(titulo, campos, variablesZero=[]) {
+  const filas = campos.filter(([,v,s]) => v)
+    .map(([k,v,score], i) => {
+      const isZero = score === 0 || score === '0';
+      const valText = score !== undefined && score >= 0 ? `${v} (${score} pts)` : v;
+      return `<div class="detalle-row${isZero?' zero-flag':''}">
+        <span class="detalle-key">${isZero?'🚫 ':''}<b>${k}</b></span>
+        <span class="detalle-val${isZero?' zero':''}">${valText}</span>
+      </div>`;
+    }).join('');
   return filas ? `<div class="detalle-section"><div class="detalle-section-title">${titulo}</div>${filas}</div>` : '';
 }
 
@@ -913,20 +941,22 @@ function updateBadge() {
 }
 function updateHome() {
   const predios = JSON.parse(localStorage.getItem('ecornsc_predios')||'[]');
-  const nm  = document.getElementById('home-reserva-name');
-  const sub = document.getElementById('home-reserva-sub');
-  const st  = document.getElementById('home-status');
+  const nm=document.getElementById('home-reserva-name'),
+        sub=document.getElementById('home-reserva-sub'),
+        st=document.getElementById('home-status');
   if (predios.length === 0) {
-    nm.textContent = 'EcoRNSC Conecta'; sub.textContent = '📋 Registra tu primer predio';
-    st.textContent = '📝 Sin predios'; st.style.cssText = 'background:#f5f0e8;color:var(--tierra);border-color:var(--crema-oscuro);';
+    nm.textContent='EcoRNSC Conecta'; sub.textContent='📋 Registra tu primer predio';
+    st.textContent='📝 Sin predios';
+    st.style.cssText='background:#f5f0e8;color:var(--tierra);border-color:var(--crema-oscuro);margin-left:auto;font-size:11px;font-weight:700;padding:5px 10px;border-radius:20px;border:1px solid;white-space:nowrap;';
   } else {
-    const u = predios[predios.length-1]; const apta = (u.puntajes?.total||0)>=60;
-    nm.textContent  = u.reserva||'Mi reserva';
-    sub.textContent = `👤 ${u.propietario||'—'} · ${predios.length} predio${predios.length>1?'s':''}`;
-    st.textContent  = apta?'✅ Apta PSA':'⚠️ En evaluación';
-    st.style.cssText = apta
-      ? 'background:#e8f5f0;color:var(--verde-medio);border-color:var(--verde-menta);margin-left:auto;font-size:11px;font-weight:700;padding:5px 10px;border-radius:20px;border:1px solid;white-space:nowrap;'
-      : 'background:#fef9e7;color:var(--dorado);border-color:var(--dorado);margin-left:auto;font-size:11px;font-weight:700;padding:5px 10px;border-radius:20px;border:1px solid;white-space:nowrap;';
+    const u=predios[predios.length-1], apta=u.puntajes?.esApto, hasZero=u.puntajes?.variablesZero?.length;
+    nm.textContent=u.reserva||'Mi reserva';
+    sub.textContent=`👤 ${u.propietario||'—'} · ${predios.length} predio${predios.length>1?'s':''}`;
+    st.textContent= apta?'✅ Apto PSA': hasZero?'🚫 No apto':'⚠️ En evaluación';
+    const bg  = apta?'#e8f5f0':hasZero?'#fff0ed':'#fef9e7';
+    const col = apta?'var(--verde-medio)':hasZero?'var(--rojo)':'var(--dorado)';
+    const brd = apta?'var(--verde-menta)':hasZero?'#f5c6c2':'var(--dorado)';
+    st.style.cssText=`background:${bg};color:${col};border-color:${brd};margin-left:auto;font-size:11px;font-weight:700;padding:5px 10px;border-radius:20px;border:1px solid;white-space:nowrap;`;
   }
 }
 
