@@ -9,26 +9,20 @@
   :root{
     --verde-bosque:#1a3a2a;--verde-medio:#2d6a4f;--verde-claro:#52b788;--verde-menta:#95d5b2;
     --crema:#f4f1e8;--crema-oscuro:#e8e3d5;--tierra:#8b5e3c;--dorado:#c9a84c;
-    --rojo:#c0392b;--ambar:#c9a84c;--texto-oscuro:#1a1a1a;--texto-medio:#4a4a4a;
+    --rojo:#c0392b;--texto-oscuro:#1a1a1a;--texto-medio:#4a4a4a;
     --sombra:0 4px 24px rgba(26,58,42,0.13);--sombra-grande:0 12px 48px rgba(26,58,42,0.18);
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   body{font-family:'DM Sans',sans-serif;background:var(--crema);color:var(--texto-oscuro);min-height:100vh;overflow-x:hidden;max-width:480px;margin:0 auto;}
-
-  /* NAV */
   .nav-bottom{position:fixed;bottom:0;left:0;right:0;background:var(--verde-bosque);display:flex;justify-content:space-around;align-items:center;padding:10px 0 16px;z-index:1000;border-top:2px solid var(--verde-claro);box-shadow:0 -4px 24px rgba(26,58,42,0.25);max-width:480px;margin:0 auto;}
   .nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;padding:6px 12px;border-radius:12px;transition:all 0.25s;color:var(--verde-menta);opacity:0.6;}
   .nav-item.active{opacity:1;color:var(--verde-claro);background:rgba(82,183,136,0.12);}
   .nav-icon{font-size:22px;position:relative;}
   .nav-badge{position:absolute;top:-4px;right:-8px;background:var(--tierra);color:white;font-size:9px;font-weight:800;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
   .nav-label{font-size:10px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;}
-
-  /* PAGES */
   .page{display:none;min-height:calc(100vh - 70px);padding-bottom:80px;animation:fadeIn 0.4s ease;}
   .page.active{display:block;}
   @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-
-  /* INICIO */
   .hero-banner{background:linear-gradient(160deg,var(--verde-bosque) 0%,var(--verde-medio) 60%,var(--verde-claro) 100%);padding:48px 24px 40px;position:relative;overflow:hidden;}
   .hero-banner::after{content:'🌿';position:absolute;bottom:-10px;right:20px;font-size:80px;opacity:0.12;}
   .hero-badge{display:inline-block;background:rgba(149,213,178,0.18);border:1px solid rgba(149,213,178,0.4);color:var(--verde-menta);font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:14px;}
@@ -49,27 +43,16 @@
   .tips-scroll::-webkit-scrollbar{display:none;}
   .tip-card{flex-shrink:0;width:200px;background:linear-gradient(135deg,var(--verde-bosque),var(--verde-medio));border-radius:16px;padding:18px;color:white;}
   .tip-emoji{font-size:28px;margin-bottom:8px;}.tip-title{font-weight:700;font-size:13px;margin-bottom:4px;}.tip-text{font-size:11px;opacity:0.8;line-height:1.5;}
-
-  /* HEADERS */
   .page-header{background:linear-gradient(135deg,var(--verde-bosque),var(--verde-medio));padding:36px 24px 28px;color:white;}
   .page-header-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;margin-bottom:6px;}
   .page-header-sub{font-size:13px;opacity:0.75;}
-
-  /* FORM */
   .form-container{padding:20px;}
   .form-group{margin-bottom:18px;}
   .form-label{display:block;font-weight:600;font-size:13px;color:var(--verde-bosque);margin-bottom:7px;}
-  .form-label span{color:var(--tierra);}
+  .form-label span.req{color:var(--tierra);}
   .form-input,.form-select,.form-textarea{width:100%;padding:13px 16px;border:1.5px solid var(--crema-oscuro);border-radius:12px;font-family:'DM Sans',sans-serif;font-size:14px;color:var(--texto-oscuro);background:white;transition:border-color 0.2s;appearance:none;-webkit-appearance:none;}
   .form-input:focus,.form-select:focus,.form-textarea:focus{outline:none;border-color:var(--verde-claro);box-shadow:0 0 0 3px rgba(82,183,136,0.15);}
   .form-textarea{resize:vertical;min-height:80px;}
-  .checkbox-group{display:flex;flex-direction:column;gap:10px;}
-  .checkbox-item{display:flex;align-items:center;gap:10px;padding:12px 16px;background:white;border-radius:12px;border:1.5px solid var(--crema-oscuro);cursor:pointer;transition:all 0.2s;}
-  .checkbox-item.checked{border-color:var(--verde-claro);background:#f0faf5;}
-  .checkbox-item input{accent-color:var(--verde-medio);width:17px;height:17px;}
-  .checkbox-label{font-size:13px;font-weight:500;color:var(--texto-medio);}
-  .upload-area{border:2px dashed var(--verde-menta);border-radius:14px;padding:28px;text-align:center;background:#f5fbf8;cursor:pointer;}
-  .upload-icon{font-size:36px;margin-bottom:8px;}.upload-text{font-size:13px;color:var(--texto-medio);}.upload-text strong{color:var(--verde-medio);}
   .btn-primary{width:100%;padding:16px;background:linear-gradient(135deg,var(--verde-medio),var(--verde-bosque));color:white;border:none;border-radius:14px;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all 0.25s;box-shadow:0 4px 16px rgba(45,106,79,0.35);margin-top:8px;display:block;}
   .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(45,106,79,0.45);}
   .form-section-title{font-family:'Playfair Display',serif;font-size:15px;font-weight:700;color:var(--verde-bosque);margin:24px 0 16px;padding-bottom:8px;border-bottom:2px solid var(--verde-menta);display:flex;align-items:center;gap:8px;}
@@ -79,37 +62,33 @@
   .radio-item.selected{border-color:var(--verde-claro);background:#f0faf5;color:var(--verde-bosque);font-weight:600;}
   .conditional-field{display:none;}
   .conditional-field.visible{display:block;}
-  .score-hint{font-size:11px;font-weight:600;margin-top:5px;padding:4px 10px;border-radius:8px;display:none;}
-  .score-hint.visible{display:inline-block;}
-  .exclusion-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--rojo);background:#fff0ed;border:1px solid #f5c6c2;padding:2px 8px;border-radius:8px;margin-left:8px;}
-
-  /* RESULTADOS */
+  .exclusion-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--rojo);background:#fff0ed;border:1px solid #f5c6c2;padding:2px 8px;border-radius:8px;margin-left:6px;vertical-align:middle;}
+  /* lista */
   .predio-list-card{background:white;border-radius:16px;margin:0 20px 12px;padding:16px;box-shadow:var(--sombra);display:flex;align-items:center;gap:14px;cursor:pointer;border:1.5px solid transparent;transition:all 0.22s;}
   .predio-list-card:hover{border-color:var(--verde-claro);transform:translateY(-2px);box-shadow:var(--sombra-grande);}
   .predio-list-left{flex:1;min-width:0;}
   .predio-list-name{font-family:'Playfair Display',serif;font-weight:700;font-size:15px;color:var(--verde-bosque);margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
   .predio-list-sub{font-size:11px;color:var(--texto-medio);margin-bottom:2px;}
   .predio-status-tag{display:inline-block;font-size:10px;font-weight:700;padding:3px 10px;border-radius:10px;margin-top:6px;}
-  .iap-display{text-align:center;flex-shrink:0;min-width:60px;}
+  .iap-display{text-align:center;flex-shrink:0;min-width:58px;}
   .iap-value{font-family:'Playfair Display',serif;font-size:26px;font-weight:900;line-height:1;}
   .iap-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-top:2px;}
   .empty-state{text-align:center;padding:48px 24px;color:var(--texto-medio);}
   .empty-state-icon{font-size:52px;margin-bottom:16px;}
   .empty-state-title{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--verde-bosque);margin-bottom:8px;}
   .empty-state-text{font-size:13px;line-height:1.6;margin-bottom:24px;}
-  .resumen-strip{display:grid;grid-template-columns:repeat(3,1fr);background:white;margin:16px 20px;border-radius:14px;box-shadow:var(--sombra);overflow:hidden;}
+  .resumen-strip{display:grid;grid-template-columns:repeat(3,1fr);background:white;margin:12px 20px;border-radius:14px;box-shadow:var(--sombra);overflow:hidden;}
   .resumen-item{padding:14px 10px;text-align:center;}
   .resumen-item+.resumen-item{border-left:1px solid var(--crema-oscuro);}
   .resumen-num{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--verde-medio);}
   .resumen-label{font-size:10px;color:var(--texto-medio);font-weight:600;margin-top:2px;}
-
-  /* DETALLE */
+  /* detalle */
   .back-btn{display:flex;align-items:center;gap:8px;padding:14px 20px;background:rgba(255,255,255,0.15);color:white;font-size:13px;font-weight:600;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;width:100%;}
   .iap-hero{display:flex;align-items:center;justify-content:center;gap:20px;padding:16px 24px 20px;flex-wrap:wrap;}
   .iap-big{font-family:'Playfair Display',serif;font-size:52px;font-weight:900;color:white;line-height:1;}
   .iap-meta{color:rgba(255,255,255,0.85);}
-  .iap-meta-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;opacity:0.75;margin-bottom:4px;}
-  .iap-meta-thresh{font-size:11px;line-height:1.8;}
+  .iap-meta-label{font-size:13px;font-weight:700;margin-bottom:4px;}
+  .iap-meta-thresh{font-size:11px;line-height:1.9;opacity:0.85;}
   .scores-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--crema-oscuro);}
   .score-item{background:white;padding:16px;text-align:center;}
   .score-label{font-size:10px;color:var(--texto-medio);font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px;}
@@ -137,8 +116,7 @@
   .alerta-box.ambar .alerta-text{color:#7a5200;}
   .delete-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:calc(100% - 40px);margin:0 20px 16px;padding:12px;background:#fff0ed;color:var(--rojo);border:1.5px solid #f5c6c2;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;}
   .delete-btn:hover{background:#ffe0da;}
-
-  /* MERCADO */
+  /* mercado */
   .filtros-scroll{display:flex;gap:8px;padding:16px 20px;overflow-x:auto;scrollbar-width:none;}
   .filtros-scroll::-webkit-scrollbar{display:none;}
   .filtro-btn{flex-shrink:0;padding:8px 18px;border-radius:20px;border:1.5px solid var(--crema-oscuro);background:white;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--texto-medio);cursor:pointer;white-space:nowrap;}
@@ -153,8 +131,7 @@
   .producto-reserva{font-size:10px;color:var(--texto-medio);margin-bottom:8px;}
   .producto-precio{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--verde-medio);}
   .btn-wa{display:flex;align-items:center;justify-content:center;gap:5px;width:100%;margin-top:8px;padding:8px;background:#25D366;color:white;border:none;border-radius:10px;font-size:11px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;}
-
-  /* PERFIL */
+  /* perfil */
   .perfil-hero{background:linear-gradient(160deg,var(--verde-bosque) 0%,var(--verde-medio) 70%,var(--verde-claro) 100%);padding:40px 24px 60px;text-align:center;position:relative;overflow:hidden;}
   .perfil-avatar{width:80px;height:80px;background:rgba(255,255,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:40px;margin:0 auto 14px;border:3px solid rgba(255,255,255,0.4);}
   .perfil-nombre{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:white;margin-bottom:4px;}
@@ -180,16 +157,14 @@
   .contacto-btn{flex:1;padding:12px;border-radius:12px;border:none;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px;}
   .contacto-btn.wa{background:#25D366;color:white;}
   .contacto-btn.ig{background:white;color:var(--verde-bosque);}
-
-  /* MODAL */
+  /* modal */
   .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;align-items:flex-end;justify-content:center;}
   .modal-overlay.show{display:flex;}
   .modal-content{background:var(--crema);border-radius:24px 24px 0 0;padding:28px 24px;width:100%;max-height:85vh;overflow-y:auto;animation:slideUp 0.35s ease;}
   @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
   .modal-handle{width:40px;height:4px;background:var(--crema-oscuro);border-radius:2px;margin:-12px auto 20px;}
-
-  /* TOAST */
-  .toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-80px);background:var(--verde-bosque);color:white;padding:12px 24px;border-radius:30px;font-size:13px;font-weight:600;z-index:3000;transition:transform 0.4s;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,0.25);max-width:90vw;text-overflow:ellipsis;overflow:hidden;}
+  /* toast */
+  .toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-80px);background:var(--verde-bosque);color:white;padding:12px 24px;border-radius:30px;font-size:13px;font-weight:600;z-index:3000;transition:transform 0.4s;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,0.25);max-width:90vw;overflow:hidden;text-overflow:ellipsis;}
   .toast.show{transform:translateX(-50%) translateY(0);}
 </style>
 </head>
@@ -234,184 +209,182 @@
   </div>
   <div class="form-container">
 
+    <!-- IDENTIFICACIÓN -->
     <div class="form-section-title">🏡 Identificación del Predio</div>
-    <div class="form-group"><label class="form-label">Nombre del propietario <span>*</span></label><input id="f-propietario" class="form-input" type="text" placeholder="Ej. María Álvarez"></div>
-    <div class="form-group"><label class="form-label">Nombre del predio <span>*</span></label><input id="f-predio" class="form-input" type="text" placeholder="Ej. Finca El Manantial"></div>
-    <div class="form-group"><label class="form-label">Nombre de la reserva <span>*</span></label><input id="f-reserva" class="form-input" type="text" placeholder="Ej. Reserva Natural El Manantial"></div>
-    <div class="form-group"><label class="form-label">Vereda <span>*</span></label><input id="f-vereda" class="form-input" type="text" placeholder="Ej. Vereda La Esperanza"></div>
-    <div class="form-group"><label class="form-label">Área (Ha) <span>*</span></label><input id="f-area" class="form-input" type="number" placeholder="Ej. 25"></div>
+    <div class="form-group"><label class="form-label">Nombre del propietario <span class="req">*</span></label><input id="f-propietario" class="form-input" type="text" placeholder="Ej. María Álvarez"></div>
+    <div class="form-group"><label class="form-label">Nombre del predio <span class="req">*</span></label><input id="f-predio" class="form-input" type="text" placeholder="Ej. Finca El Manantial"></div>
+    <div class="form-group"><label class="form-label">Nombre de la reserva <span class="req">*</span></label><input id="f-reserva" class="form-input" type="text" placeholder="Ej. Reserva Natural El Manantial"></div>
+    <div class="form-group"><label class="form-label">Vereda <span class="req">*</span></label><input id="f-vereda" class="form-input" type="text" placeholder="Ej. Vereda La Esperanza"></div>
+    <div class="form-group"><label class="form-label">Área (Ha) <span class="req">*</span></label><input id="f-area" class="form-input" type="number" placeholder="Ej. 25"></div>
 
+    <!-- ESTADO LEGAL -->
     <div class="form-section-title">📋 Estado Legal y Ambiental</div>
     <div class="form-group">
-      <label class="form-label">¿La RNSC está registrada? <span>*</span></label>
+      <label class="form-label">¿La RNSC está registrada? <span class="req">*</span></label>
       <div class="radio-group">
         <label class="radio-item" onclick="toggleConditional(this,'campo-num-registro')"><input type="radio" name="rnsc-registrada" value="si"> Sí</label>
         <label class="radio-item" onclick="clearConditional(this,'campo-num-registro')"><input type="radio" name="rnsc-registrada" value="no"> No</label>
       </div>
     </div>
-    <div class="form-group conditional-field" id="campo-num-registro"><label class="form-label">Número de registro</label><input id="f-num-registro" class="form-input" type="text" placeholder="Ej. RNSC-2021-0042"></div>
+    <div class="form-group conditional-field" id="campo-num-registro">
+      <label class="form-label">Número de registro</label>
+      <input id="f-num-registro" class="form-input" type="text" placeholder="Ej. RNSC-2021-0042">
+    </div>
     <div class="form-group">
-      <label class="form-label">¿Está siendo beneficiario de algún convenio de PSA? <span>*</span></label>
+      <label class="form-label">¿Está siendo beneficiario de algún convenio de PSA? <span class="req">*</span></label>
       <div class="radio-group">
         <label class="radio-item" onclick="toggleConditional(this,'campo-convenio')"><input type="radio" name="psa-beneficiario" value="si"> Sí</label>
         <label class="radio-item" onclick="clearConditional(this,'campo-convenio')"><input type="radio" name="psa-beneficiario" value="no"> No</label>
       </div>
     </div>
-    <div class="form-group conditional-field" id="campo-convenio"><label class="form-label">¿De cuál convenio participa?</label><input id="f-convenio" class="form-input" type="text" placeholder="Ej. Convenio Cornare – Gobernación de Antioquia"></div>
+    <div class="form-group conditional-field" id="campo-convenio">
+      <label class="form-label">¿De cuál convenio participa?</label>
+      <input id="f-convenio" class="form-input" type="text" placeholder="Ej. Convenio Cornare – Gobernación de Antioquia">
+    </div>
     <div class="form-group">
-      <label class="form-label">Tipo de propiedad <span>*</span></label>
+      <label class="form-label">Tipo de propiedad <span class="req">*</span></label>
       <select id="f-tipo-propiedad" class="form-select">
         <option value="">Selecciona...</option>
-        <option>Propia</option>
-        <option>Arrendada</option>
+        <option value="Propia">Propia</option>
+        <option value="Arrendada">Arrendada</option>
       </select>
     </div>
-    <div class="form-group"><label class="form-label">Número de escritura <span>*</span></label><input id="f-escritura" class="form-input" type="text" placeholder="Ej. Escritura 1234 de 2010"></div>
-
-    <!-- VARIABLES ECOLÓGICAS — VE = (CV+PB+EC+BP+FH)/5 -->
-    <div class="form-section-title">🌿 Variables Ecológicas (VE)</div>
     <div class="form-group">
-      <label class="form-label">CV — Cobertura vegetal <span>*</span><span class="exclusion-badge">Criterio de exclusión</span></label>
-      <select id="f-cobertura" class="form-select" onchange="showScoreHint(this,'hint-cobertura')">
+      <label class="form-label">Número de escritura <span class="req">*</span></label>
+      <input id="f-escritura" class="form-input" type="text" placeholder="Ej. Escritura 1234 de 2010">
+    </div>
+
+    <!-- VARIABLES ECOLÓGICAS — VE = (CV+PB+EC+BP+FH)/5  peso 0.30 -->
+    <div class="form-section-title">🌿 Variables Ecológicas (VE · peso 30%)</div>
+    <div class="form-group">
+      <label class="form-label">CV — Cobertura vegetal <span class="req">*</span><span class="exclusion-badge">🚫 Excluyente</span></label>
+      <select id="f-cobertura" class="form-select" data-exclusion="true">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Alta (>70%)" data-score="2">Alta (&gt;70%)</option>
-        <option value="Media (30-70%)" data-score="1">Media (30-70%)</option>
-        <option value="Baja (<30%)" data-score="0">Baja (&lt;30%) — descalificante</option>
+        <option value="Media (30-70%)" data-score="1">Media (30–70%)</option>
+        <option value="Baja (<30%)" data-score="0">Baja (&lt;30%)</option>
       </select>
-      <div class="score-hint" id="hint-cobertura"></div>
     </div>
     <div class="form-group">
-      <label class="form-label">PB — Presencia de bosque <span>*</span><span class="exclusion-badge">Criterio de exclusión</span></label>
-      <select id="f-bosque" class="form-select" onchange="showScoreHint(this,'hint-bosque')">
+      <label class="form-label">PB — Presencia de bosque <span class="req">*</span><span class="exclusion-badge">🚫 Excluyente</span></label>
+      <select id="f-bosque" class="form-select" data-exclusion="true">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Sí" data-score="2">Sí</option>
         <option value="Parcial" data-score="1">Parcial</option>
-        <option value="No" data-score="0">No — descalificante</option>
+        <option value="No" data-score="0">No</option>
       </select>
-      <div class="score-hint" id="hint-bosque"></div>
     </div>
     <div class="form-group">
-      <label class="form-label">EC — Estado de conservación <span>*</span></label>
-      <select id="f-conservacion" class="form-select" onchange="showScoreHint(this,'hint-conservacion')">
+      <label class="form-label">EC — Estado de conservación <span class="req">*</span></label>
+      <select id="f-conservacion" class="form-select">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Conservado" data-score="2">Conservado</option>
         <option value="Intervenido" data-score="1">Intervenido</option>
         <option value="Degradado" data-score="0">Degradado</option>
       </select>
-      <div class="score-hint" id="hint-conservacion"></div>
     </div>
     <div class="form-group">
-      <label class="form-label">BP — Biodiversidad percibida <span>*</span></label>
-      <select id="f-biodiversidad" class="form-select" onchange="showScoreHint(this,'hint-biodiversidad')">
+      <label class="form-label">BP — Biodiversidad percibida <span class="req">*</span></label>
+      <select id="f-biodiversidad" class="form-select">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Alta" data-score="2">Alta</option>
         <option value="Media" data-score="1">Media</option>
         <option value="Baja" data-score="0">Baja</option>
       </select>
-      <div class="score-hint" id="hint-biodiversidad"></div>
     </div>
     <div class="form-group">
-      <label class="form-label">FH — Fuentes hídricas <span>*</span></label>
-      <select id="f-fuentes" class="form-select" onchange="showScoreHint(this,'hint-fuentes')">
+      <label class="form-label">FH — Fuentes hídricas <span class="req">*</span></label>
+      <select id="f-fuentes" class="form-select">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Sí (nacimiento/quebrada)" data-score="2">Sí (nacimiento / quebrada)</option>
         <option value="Cercanas" data-score="1">Cercanas</option>
         <option value="No" data-score="0">No</option>
       </select>
-      <div class="score-hint" id="hint-fuentes"></div>
     </div>
 
-    <!-- VARIABLES SERVICIOS ECOSISTÉMICOS — VSE = (RH+VP+CE)/3 -->
-    <div class="form-section-title">♻️ Variables Servicios Ecosistémicos (VSE)</div>
+    <!-- VARIABLES SERVICIOS ECOSISTÉMICOS — VSE = (RH+VP+CE)/3  peso 0.25 -->
+    <div class="form-section-title">♻️ Variables Servicios Ecosistémicos (VSE · peso 25%)</div>
     <div class="form-group">
-      <label class="form-label">RH — Regulación hídrica <span>*</span></label>
-      <select id="f-regulacion" class="form-select" onchange="showScoreHint(this,'hint-regulacion')">
+      <label class="form-label">RH — Regulación hídrica <span class="req">*</span></label>
+      <select id="f-regulacion" class="form-select">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Alta" data-score="2">Alta</option>
         <option value="Media" data-score="1">Media</option>
         <option value="Baja" data-score="0">Baja</option>
       </select>
-      <div class="score-hint" id="hint-regulacion"></div>
     </div>
     <div class="form-group">
-      <label class="form-label">VP — Valor paisajístico <span>*</span></label>
-      <select id="f-paisaje" class="form-select" onchange="showScoreHint(this,'hint-paisaje')">
+      <label class="form-label">VP — Valor paisajístico <span class="req">*</span></label>
+      <select id="f-paisaje" class="form-select">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Alto (turismo viable)" data-score="2">Alto (turismo viable)</option>
         <option value="Medio" data-score="1">Medio</option>
         <option value="Bajo" data-score="0">Bajo</option>
       </select>
-      <div class="score-hint" id="hint-paisaje"></div>
     </div>
     <div class="form-group">
-      <label class="form-label">CE — Conectividad ecológica <span>*</span></label>
-      <select id="f-conectividad" class="form-select" onchange="showScoreHint(this,'hint-conectividad')">
+      <label class="form-label">CE — Conectividad ecológica <span class="req">*</span></label>
+      <select id="f-conectividad" class="form-select">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Alta (cerca áreas protegidas)" data-score="2">Alta (cerca áreas protegidas)</option>
         <option value="Media" data-score="1">Media</option>
         <option value="Baja" data-score="0">Baja</option>
       </select>
-      <div class="score-hint" id="hint-conectividad"></div>
     </div>
 
-    <!-- VARIABLES USOS DEL SUELO — VUS = (USA+PS+PA)/3 -->
-    <div class="form-section-title">🌾 Variables Usos del Suelo (VUS)</div>
+    <!-- VARIABLES USOS DEL SUELO — VUS = (USA+PS+PA)/3  peso 0.25 -->
+    <div class="form-section-title">🌾 Variables Usos del Suelo (VUS · peso 25%)</div>
     <div class="form-group">
-      <label class="form-label">USA — Uso del suelo actual <span>*</span><span class="exclusion-badge">Criterio de exclusión</span></label>
-      <select id="f-uso-suelo" class="form-select" onchange="showScoreHint(this,'hint-uso-suelo')">
+      <label class="form-label">USA — Uso del suelo actual <span class="req">*</span><span class="exclusion-badge">🚫 Excluyente</span></label>
+      <select id="f-uso-suelo" class="form-select" data-exclusion="true">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Conservación / sostenible" data-score="2">Conservación / sostenible</option>
         <option value="Uso mixto" data-score="1">Uso mixto</option>
-        <option value="Intensivo" data-score="0">Intensivo — descalificante</option>
+        <option value="Intensivo" data-score="0">Intensivo</option>
       </select>
-      <div class="score-hint" id="hint-uso-suelo"></div>
     </div>
     <div class="form-group">
-      <label class="form-label">PS — Prácticas sostenibles <span>*</span></label>
-      <select id="f-practicas" class="form-select" onchange="showScoreHint(this,'hint-practicas')">
+      <label class="form-label">PS — Prácticas sostenibles <span class="req">*</span></label>
+      <select id="f-practicas" class="form-select">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Implementadas" data-score="2">Implementadas</option>
         <option value="Parciales" data-score="1">Parciales</option>
         <option value="No existen" data-score="0">No existen</option>
       </select>
-      <div class="score-hint" id="hint-practicas"></div>
     </div>
     <div class="form-group">
-      <label class="form-label">PA — Presión ambiental <span>*</span><span class="exclusion-badge">Criterio de exclusión</span></label>
-      <select id="f-presion" class="form-select" onchange="showScoreHint(this,'hint-presion')">
+      <label class="form-label">PA — Presión ambiental <span class="req">*</span><span class="exclusion-badge">🚫 Excluyente</span></label>
+      <select id="f-presion" class="form-select" data-exclusion="true">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Baja" data-score="2">Baja</option>
         <option value="Media" data-score="1">Media</option>
-        <option value="Alta" data-score="0">Alta — descalificante</option>
+        <option value="Alta" data-score="0">Alta</option>
       </select>
-      <div class="score-hint" id="hint-presion"></div>
     </div>
 
-    <!-- VARIABLES SOCIOPRODUCTIVAS — VSP = (CP+PT+TSE)/3 -->
-    <div class="form-section-title">🤝 Variables Socioproductivas (VSP)</div>
+    <!-- VARIABLES SOCIOPRODUCTIVAS — VSP = (CP+PT+TSE)/3  peso 0.20 -->
+    <div class="form-section-title">🤝 Variables Socioproductivas (VSP · peso 20%)</div>
     <div class="form-group">
-      <label class="form-label">CP — Capacidad productiva <span>*</span></label>
-      <select id="f-capacidad" class="form-select" onchange="showScoreHint(this,'hint-capacidad')">
+      <label class="form-label">CP — Capacidad productiva <span class="req">*</span></label>
+      <select id="f-capacidad" class="form-select">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Alta" data-score="2">Alta</option>
         <option value="Media" data-score="1">Media</option>
         <option value="Baja" data-score="0">Baja</option>
       </select>
-      <div class="score-hint" id="hint-capacidad"></div>
     </div>
     <div class="form-group">
-      <label class="form-label">PT — Potencial turístico <span>*</span></label>
-      <select id="f-turismo" class="form-select" onchange="showScoreHint(this,'hint-turismo')">
+      <label class="form-label">PT — Potencial turístico <span class="req">*</span></label>
+      <select id="f-turismo" class="form-select">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Alto" data-score="2">Alto</option>
         <option value="Medio" data-score="1">Medio</option>
         <option value="Bajo" data-score="0">Bajo</option>
       </select>
-      <div class="score-hint" id="hint-turismo"></div>
     </div>
     <div class="form-group">
-      <label class="form-label">TSE — Tipo de servicio ecosistémico predominante <span>*</span></label>
-      <select id="f-tipo-servicio" class="form-select" onchange="showScoreHint(this,'hint-tipo-servicio')">
+      <label class="form-label">TSE — Tipo de servicio ecosistémico predominante <span class="req">*</span></label>
+      <select id="f-tipo-servicio" class="form-select">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Regulación hídrica" data-score="3">💧 Regulación hídrica</option>
         <option value="Conservación de biodiversidad" data-score="3">🦋 Conservación de biodiversidad</option>
@@ -420,13 +393,18 @@
         <option value="Servicios de provisión sostenible" data-score="1">🌾 Servicios de provisión sostenible</option>
         <option value="Sin servicio identificado" data-score="0">❌ Sin servicio identificado</option>
       </select>
-      <div class="score-hint" id="hint-tipo-servicio"></div>
     </div>
 
-    <div class="form-group"><label class="form-label">Descripción general del predio</label><textarea id="f-descripcion" class="form-textarea" placeholder="Describe las características más importantes de tu reserva..."></textarea></div>
+    <div class="form-group">
+      <label class="form-label">Descripción general del predio</label>
+      <textarea id="f-descripcion" class="form-textarea" placeholder="Describe las características más importantes de tu reserva..."></textarea>
+    </div>
     <div class="form-group">
       <label class="form-label">Fotografías del predio</label>
-      <div class="upload-area"><div class="upload-icon">📷</div><div class="upload-text"><strong>Toca para subir fotos</strong><br>Bosque, fuentes de agua, fauna</div></div>
+      <div class="upload-area" style="border:2px dashed var(--verde-menta);border-radius:14px;padding:28px;text-align:center;background:#f5fbf8;cursor:pointer;">
+        <div style="font-size:36px;margin-bottom:8px;">📷</div>
+        <div style="font-size:13px;color:var(--texto-medio);"><strong style="color:var(--verde-medio);">Toca para subir fotos</strong><br>Bosque, fuentes de agua, fauna</div>
+      </div>
     </div>
     <button type="button" class="btn-primary" id="btn-submit">🔍 Evaluar y Guardar Predio</button>
   </div>
@@ -440,7 +418,6 @@
       <div class="page-header-title">Diagnóstico de Predios</div>
       <div class="page-header-sub">Índice de Aptitud del Predio (IAP) por predio registrado.</div>
     </div>
-    <!-- Leyenda IAP -->
     <div style="display:flex;gap:6px;padding:12px 20px 0;flex-wrap:wrap;">
       <span style="font-size:11px;font-weight:600;background:#e8f5f0;color:var(--verde-medio);padding:4px 10px;border-radius:10px;">✅ Apto IAP &gt; 1.5</span>
       <span style="font-size:11px;font-weight:600;background:#fef9e7;color:#8b5e00;padding:4px 10px;border-radius:10px;">⚡ Pot. apto 0.8–1.5</span>
@@ -535,13 +512,9 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ═══════════════════════════════════════════════════
-//  CONSTANTES Y HELPERS
-// ═══════════════════════════════════════════════════
-
-// Criterios de exclusión automática (valor 0 → NO APTO sin importar IAP)
-var EXCLUSION_IDS = ['s1','s2','s9','s11']; // CV, PB, USA, PA
-
+// ═══════════════════════════════════════════════
+//  ETIQUETAS
+// ═══════════════════════════════════════════════
 var VAR_LABELS = {
   s1:'CV — Cobertura vegetal', s2:'PB — Presencia de bosque',
   s3:'EC — Estado de conservación', s4:'BP — Biodiversidad percibida', s5:'FH — Fuentes hídricas',
@@ -550,217 +523,166 @@ var VAR_LABELS = {
   s12:'CP — Capacidad productiva', s13:'PT — Potencial turístico', s14:'TSE — Tipo de servicio ecosistémico'
 };
 
-function getSelectScore(elId) {
+// ═══════════════════════════════════════════════
+//  HELPERS
+// ═══════════════════════════════════════════════
+function getScore(elId) {
   var el = document.getElementById(elId);
   if (!el || el.selectedIndex <= 0) return -1;
-  var score = el.options[el.selectedIndex].getAttribute('data-score');
-  return score !== null ? parseInt(score, 10) : -1;
+  var v = el.options[el.selectedIndex].getAttribute('data-score');
+  return (v !== null) ? parseInt(v, 10) : -1;
 }
-
-function safeScore(val) {
-  return (val !== undefined && val !== null && val >= 0) ? Number(val) : 0;
+function getVal(elId) {
+  var el = document.getElementById(elId);
+  return el ? el.value : '';
 }
+function safe(n) { return (n !== undefined && n !== null && n >= 0) ? Number(n) : 0; }
+function f2(n)   { return Number(n).toFixed(2); }
 
-function fmt2(n) { return Number(n).toFixed(2); }
-
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
 //  FÓRMULA IAP
-//  VE  = (CV+PB+EC+BP+FH)/5         peso 0.30
-//  VSE = (RH+VP+CE)/3               peso 0.25
-//  VUS = (USA+PS+PA)/3              peso 0.25
-//  VSP = (CP+PT+TSE)/3              peso 0.20
-//  IAP = 0.30·VE + 0.25·VSE + 0.25·VUS + 0.20·VSP
-//  Apto: IAP > 1.5  |  Pot.apto: 0.8 < IAP ≤ 1.5  |  No apto: IAP ≤ 0.8
-//  + Exclusión automática si CV, PB, USA o PA = 0
-// ═══════════════════════════════════════════════════
+//  VE  = (CV+PB+EC+BP+FH)/5   peso 0.30
+//  VSE = (RH+VP+CE)/3          peso 0.25
+//  VUS = (USA+PS+PA)/3         peso 0.25
+//  VSP = (CP+PT+TSE)/3         peso 0.20
+//  IAP = 0.30·VE+0.25·VSE+0.25·VUS+0.20·VSP
+//  Exclusión automática si CV=0, PB=0, USA=0 o PA=0
+//  Apto: IAP>1.5 | Pot.apto: 0.8<IAP≤1.5 | No apto: IAP≤0.8
+// ═══════════════════════════════════════════════
 function calcularPuntaje(p) {
-  // Detectar criterios de exclusión con valor 0
-  var exclusionFields = [
-    { key:'s1', name:'CV — Cobertura vegetal',    val:p.cobertura, score:p.s1  },
-    { key:'s2', name:'PB — Presencia de bosque',  val:p.bosque,    score:p.s2  },
-    { key:'s9', name:'USA — Uso del suelo actual',val:p.usoSuelo,  score:p.s9  },
-    { key:'s11',name:'PA — Presión ambiental',    val:p.presion,   score:p.s11 }
+  var excl = [
+    { key:'s1',  val:p.cobertura, score:p.s1  },
+    { key:'s2',  val:p.bosque,    score:p.s2  },
+    { key:'s9',  val:p.usoSuelo,  score:p.s9  },
+    { key:'s11', val:p.presion,   score:p.s11 }
   ];
+  var variablesZero = excl
+    .filter(function(v){ return v.val && v.val !== '' && (v.score === 0 || v.score === '0'); })
+    .map(function(v){ return v.key; });
+  var tieneExclusion = variablesZero.length > 0;
 
-  var exclusionesActivadas = exclusionFields
-    .filter(function(v) { return v.val && v.val !== '' && (v.score === 0 || v.score === '0'); })
-    .map(function(v) { return v.key; });
-
-  var tieneExclusion = exclusionesActivadas.length > 0;
-
-  // Sub-índices
-  var VE  = (safeScore(p.s1) + safeScore(p.s2) + safeScore(p.s3) + safeScore(p.s4) + safeScore(p.s5)) / 5;
-  var VSE = (safeScore(p.s6) + safeScore(p.s7) + safeScore(p.s8)) / 3;
-  var VUS = (safeScore(p.s9) + safeScore(p.s10) + safeScore(p.s11)) / 3;
-  var VSP = (safeScore(p.s12) + safeScore(p.s13) + safeScore(p.s14)) / 3;
-
-  // IAP ponderado
+  var VE  = (safe(p.s1)+safe(p.s2)+safe(p.s3)+safe(p.s4)+safe(p.s5)) / 5;
+  var VSE = (safe(p.s6)+safe(p.s7)+safe(p.s8)) / 3;
+  var VUS = (safe(p.s9)+safe(p.s10)+safe(p.s11)) / 3;
+  var VSP = (safe(p.s12)+safe(p.s13)+safe(p.s14)) / 3;
   var IAP = 0.30*VE + 0.25*VSE + 0.25*VUS + 0.20*VSP;
 
-  // Estado
   var estado;
-  if (tieneExclusion) {
-    estado = 'no_apto';
-  } else if (IAP > 1.5) {
-    estado = 'apto';
-  } else if (IAP > 0.8) {
-    estado = 'pot_apto';
-  } else {
-    estado = 'no_apto';
-  }
-
-  var causaNoApto = tieneExclusion ? 'exclusion' : (estado === 'no_apto' ? 'puntaje' : null);
+  if (tieneExclusion)  estado = 'no_apto';
+  else if (IAP > 1.5)  estado = 'apto';
+  else if (IAP > 0.8)  estado = 'pot_apto';
+  else                 estado = 'no_apto';
 
   return {
-    VE: VE, VSE: VSE, VUS: VUS, VSP: VSP,
-    IAP: IAP, estado: estado,
-    esApto: estado === 'apto',
-    esPotApto: estado === 'pot_apto',
-    variablesZero: exclusionesActivadas,
-    causaNoApto: causaNoApto
+    VE:VE, VSE:VSE, VUS:VUS, VSP:VSP, IAP:IAP,
+    estado:estado, esApto:estado==='apto', esPotApto:estado==='pot_apto',
+    variablesZero:variablesZero,
+    causaNoApto: tieneExclusion ? 'exclusion' : (estado==='no_apto'?'puntaje':null)
   };
 }
 
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
 //  NAVEGACIÓN
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
 function goPage(id) {
-  document.querySelectorAll('.page').forEach(function(p) { p.classList.remove('active'); });
+  document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('active'); });
   document.getElementById(id).classList.add('active');
-  document.querySelectorAll('.nav-item').forEach(function(n) { n.classList.remove('active'); });
-  var idx = {'page-inicio':0,'page-registro':1,'page-resultados':2,'page-mercado':3,'page-perfil':4}[id];
-  if (idx !== undefined) document.querySelectorAll('.nav-item')[idx].classList.add('active');
-  window.scrollTo(0, 0);
+  document.querySelectorAll('.nav-item').forEach(function(n){ n.classList.remove('active'); });
+  var i = {'page-inicio':0,'page-registro':1,'page-resultados':2,'page-mercado':3,'page-perfil':4}[id];
+  if (i !== undefined) document.querySelectorAll('.nav-item')[i].classList.add('active');
+  window.scrollTo(0,0);
   if (id === 'page-resultados') renderListaPredios();
 }
 
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
 //  CONDICIONALES
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
 function toggleConditional(lbl, fid) {
   lbl.parentElement.querySelectorAll('.radio-item').forEach(function(s){ s.classList.remove('selected'); });
-  lbl.classList.add('selected');
-  lbl.querySelector('input').checked = true;
+  lbl.classList.add('selected'); lbl.querySelector('input').checked = true;
   document.getElementById(fid).classList.add('visible');
 }
 function clearConditional(lbl, fid) {
   lbl.parentElement.querySelectorAll('.radio-item').forEach(function(s){ s.classList.remove('selected'); });
-  lbl.classList.add('selected');
-  lbl.querySelector('input').checked = true;
+  lbl.classList.add('selected'); lbl.querySelector('input').checked = true;
   document.getElementById(fid).classList.remove('visible');
 }
 
-// ═══════════════════════════════════════════════════
-//  SCORE HINT
-// ═══════════════════════════════════════════════════
-function showScoreHint(sel, hintId) {
-  var opt   = sel.options[sel.selectedIndex];
-  var score = parseInt(opt.getAttribute('data-score') || '-1', 10);
-  var hint  = document.getElementById(hintId);
-  if (!hint || score < 0 || !opt.value) { if (hint) hint.classList.remove('visible'); return; }
-  var labels = ['0 — ⚠️ Impacto nulo','1 — Impacto medio','2 — Alto impacto','3 — Máximo impacto'];
-  var colors  = ['#c0392b','#c9a84c','#2d6a4f','#1a3a2a'];
-  var bgs     = ['#fff0ed','#fef9e7','#e8f5f0','#d4edda'];
-  hint.textContent      = '⚡ ' + (labels[score] || score + ' pts');
-  hint.style.color      = colors[score] || '#1a3a2a';
-  hint.style.background = bgs[score]    || '#d4edda';
-  hint.classList.add('visible');
-}
-
-// ═══════════════════════════════════════════════════
-//  MODAL / FILTROS
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
+//  MODAL / FILTROS / TOAST
+// ═══════════════════════════════════════════════
 function openModal() { document.getElementById('modal').classList.add('show'); }
-function closeModal(e) { if (!e || e.target === document.getElementById('modal')) document.getElementById('modal').classList.remove('show'); }
+function closeModal(e) { if (!e || e.target===document.getElementById('modal')) document.getElementById('modal').classList.remove('show'); }
 function setFiltro(btn) { document.querySelectorAll('.filtro-btn').forEach(function(b){ b.classList.remove('active'); }); btn.classList.add('active'); }
-
-// ═══════════════════════════════════════════════════
-//  TOAST
-// ═══════════════════════════════════════════════════
 function showToast(msg) {
   var t = document.getElementById('toast');
-  t.textContent = msg;
-  t.classList.add('show');
+  t.textContent = msg; t.classList.add('show');
   setTimeout(function(){ t.classList.remove('show'); }, 3500);
 }
 
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
 //  SUBMIT FORM
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
 function submitForm() {
   try {
-    var prop = document.getElementById('f-propietario').value.trim();
-    var res  = document.getElementById('f-reserva').value.trim();
-    if (!prop || !res) {
-      showToast('⚠️ Completa al menos Propietario y Reserva');
-      return;
-    }
+    var prop = getVal('f-propietario').trim();
+    var res  = getVal('f-reserva').trim();
+    if (!prop || !res) { showToast('⚠️ Completa al menos Propietario y Reserva'); return; }
 
-    // Recoger checkboxes
-    var cbServicios = [], cbIniciativas = [];
-    document.querySelectorAll('.cb-servicios:checked').forEach(function(c){ cbServicios.push(c.value); });
-    document.querySelectorAll('.cb-iniciativas:checked').forEach(function(c){ cbIniciativas.push(c.value); });
-
-    // Radio buttons
     var rnscReg = document.querySelector('input[name="rnsc-registrada"]:checked');
     var psaBen  = document.querySelector('input[name="psa-beneficiario"]:checked');
 
     var predio = {
-      id:            Date.now(),
-      fecha:         new Date().toLocaleDateString('es-CO',{day:'2-digit',month:'2-digit',year:'numeric'}),
-      propietario:   prop,
-      nombrePredio:  document.getElementById('f-predio').value.trim(),
-      reserva:       res,
-      vereda:        document.getElementById('f-vereda').value.trim(),
-      area:          document.getElementById('f-area').value.trim(),
-      rnscRegistrada:rnscReg ? rnscReg.value : '',
-      numRegistro:   document.getElementById('f-num-registro').value.trim(),
+      id:              Date.now(),
+      fecha:           new Date().toLocaleDateString('es-CO',{day:'2-digit',month:'2-digit',year:'numeric'}),
+      propietario:     prop,
+      nombrePredio:    getVal('f-predio').trim(),
+      reserva:         res,
+      vereda:          getVal('f-vereda').trim(),
+      area:            getVal('f-area').trim(),
+      rnscRegistrada:  rnscReg ? rnscReg.value : '',
+      numRegistro:     getVal('f-num-registro').trim(),
       psaBeneficiario: psaBen ? psaBen.value : '',
-      convenio:      document.getElementById('f-convenio').value.trim(),
-      tipoPropiedad: document.getElementById('f-tipo-propiedad').value,
-      escritura:     document.getElementById('f-escritura').value.trim(),
-      ecosistema:    document.getElementById('f-ecosistema').value,
-      serviciosEco:  cbServicios,
-      iniciativas:   cbIniciativas,
-      cobertura:     document.getElementById('f-cobertura').value,
-      bosque:        document.getElementById('f-bosque').value,
-      conservacion:  document.getElementById('f-conservacion').value,
-      biodiversidad: document.getElementById('f-biodiversidad').value,
-      fuentes:       document.getElementById('f-fuentes').value,
-      regulacion:    document.getElementById('f-regulacion').value,
-      paisaje:       document.getElementById('f-paisaje').value,
-      conectividad:  document.getElementById('f-conectividad').value,
-      usoSuelo:      document.getElementById('f-uso-suelo').value,
-      practicas:     document.getElementById('f-practicas').value,
-      presion:       document.getElementById('f-presion').value,
-      capacidad:     document.getElementById('f-capacidad').value,
-      turismo:       document.getElementById('f-turismo').value,
-      tipoServicio:  document.getElementById('f-tipo-servicio').value,
-      descripcion:   document.getElementById('f-descripcion').value.trim(),
-      s1:  getSelectScore('f-cobertura'),
-      s2:  getSelectScore('f-bosque'),
-      s3:  getSelectScore('f-conservacion'),
-      s4:  getSelectScore('f-biodiversidad'),
-      s5:  getSelectScore('f-fuentes'),
-      s6:  getSelectScore('f-regulacion'),
-      s7:  getSelectScore('f-paisaje'),
-      s8:  getSelectScore('f-conectividad'),
-      s9:  getSelectScore('f-uso-suelo'),
-      s10: getSelectScore('f-practicas'),
-      s11: getSelectScore('f-presion'),
-      s12: getSelectScore('f-capacidad'),
-      s13: getSelectScore('f-turismo'),
-      s14: getSelectScore('f-tipo-servicio'),
+      convenio:        getVal('f-convenio').trim(),
+      tipoPropiedad:   getVal('f-tipo-propiedad'),
+      escritura:       getVal('f-escritura').trim(),
+      descripcion:     getVal('f-descripcion').trim(),
+      // Valores de selects puntuados
+      cobertura:     getVal('f-cobertura'),
+      bosque:        getVal('f-bosque'),
+      conservacion:  getVal('f-conservacion'),
+      biodiversidad: getVal('f-biodiversidad'),
+      fuentes:       getVal('f-fuentes'),
+      regulacion:    getVal('f-regulacion'),
+      paisaje:       getVal('f-paisaje'),
+      conectividad:  getVal('f-conectividad'),
+      usoSuelo:      getVal('f-uso-suelo'),
+      practicas:     getVal('f-practicas'),
+      presion:       getVal('f-presion'),
+      capacidad:     getVal('f-capacidad'),
+      turismo:       getVal('f-turismo'),
+      tipoServicio:  getVal('f-tipo-servicio'),
+      // Scores numéricos
+      s1:  getScore('f-cobertura'),
+      s2:  getScore('f-bosque'),
+      s3:  getScore('f-conservacion'),
+      s4:  getScore('f-biodiversidad'),
+      s5:  getScore('f-fuentes'),
+      s6:  getScore('f-regulacion'),
+      s7:  getScore('f-paisaje'),
+      s8:  getScore('f-conectividad'),
+      s9:  getScore('f-uso-suelo'),
+      s10: getScore('f-practicas'),
+      s11: getScore('f-presion'),
+      s12: getScore('f-capacidad'),
+      s13: getScore('f-turismo'),
+      s14: getScore('f-tipo-servicio'),
     };
 
     predio.puntajes = calcularPuntaje(predio);
 
-    // Guardar en localStorage
     var predios = [];
-    try {
-      var raw = localStorage.getItem('ecornsc_predios');
-      if (raw) predios = JSON.parse(raw);
-    } catch(e) { predios = []; }
+    try { var raw = localStorage.getItem('ecornsc_predios'); if (raw) predios = JSON.parse(raw); } catch(e){}
     predios.push(predio);
     localStorage.setItem('ecornsc_predios', JSON.stringify(predios));
 
@@ -768,52 +690,42 @@ function submitForm() {
     updateBadge();
     updateHome();
 
-    var estado = predio.puntajes.estado;
-    var toastMsg = estado === 'apto'
-      ? '✅ Predio guardado — APTO (IAP ' + fmt2(predio.puntajes.IAP) + ')'
-      : estado === 'pot_apto'
-        ? '⚡ Predio guardado — POTENCIALMENTE APTO (IAP ' + fmt2(predio.puntajes.IAP) + ')'
-        : '🚫 Predio guardado — NO APTO (IAP ' + fmt2(predio.puntajes.IAP) + ')';
-    showToast(toastMsg);
+    var e = predio.puntajes.estado;
+    showToast(e==='apto' ? '✅ Predio guardado — APTO'
+      : e==='pot_apto'  ? '⚡ Predio guardado — POTENCIALMENTE APTO'
+      :                   '🚫 Predio guardado — NO APTO');
     goPage('page-resultados');
 
   } catch(err) {
     showToast('❌ Error: ' + err.message);
-    console.error(err);
+    console.error('submitForm error:', err);
   }
 }
 
 function resetForm() {
-  document.querySelectorAll('#page-registro input[type=text],#page-registro input[type=number],#page-registro textarea')
-    .forEach(function(el){ el.value=''; });
-  document.querySelectorAll('#page-registro select')
-    .forEach(function(el){ el.selectedIndex=0; });
-  document.querySelectorAll('#page-registro input[type=checkbox]')
-    .forEach(function(el){ el.checked=false; });
-  document.querySelectorAll('#page-registro .checkbox-item')
-    .forEach(function(el){ el.classList.remove('checked'); });
-  document.querySelectorAll('#page-registro .radio-item')
-    .forEach(function(el){ el.classList.remove('selected'); });
-  document.querySelectorAll('#page-registro input[type=radio]')
-    .forEach(function(el){ el.checked=false; });
-  document.querySelectorAll('#page-registro .conditional-field')
-    .forEach(function(el){ el.classList.remove('visible'); });
-  document.querySelectorAll('.score-hint')
-    .forEach(function(el){ el.classList.remove('visible'); });
+  ['f-propietario','f-predio','f-reserva','f-vereda','f-area','f-num-registro','f-convenio','f-escritura','f-descripcion']
+    .forEach(function(id){ var el=document.getElementById(id); if(el) el.value=''; });
+  ['f-tipo-propiedad','f-cobertura','f-bosque','f-conservacion','f-biodiversidad','f-fuentes',
+   'f-regulacion','f-paisaje','f-conectividad','f-uso-suelo','f-practicas','f-presion',
+   'f-capacidad','f-turismo','f-tipo-servicio']
+    .forEach(function(id){ var el=document.getElementById(id); if(el) el.selectedIndex=0; });
+  document.querySelectorAll('#page-registro .radio-item').forEach(function(el){ el.classList.remove('selected'); });
+  document.querySelectorAll('#page-registro input[type=radio]').forEach(function(el){ el.checked=false; });
+  document.querySelectorAll('#page-registro .conditional-field').forEach(function(el){ el.classList.remove('visible'); });
 }
 
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
 //  LISTA PREDIOS
-// ═══════════════════════════════════════════════════
-function estadoConfig(estado) {
-  if (estado === 'apto')    return { col:'var(--verde-medio)', bg:'#e8f5f0', brd:'var(--verde-menta)', tag:'✅ Apto', icon:'🏅' };
-  if (estado === 'pot_apto') return { col:'#8b5e00', bg:'#fef9e7', brd:'#f5dfa0', tag:'⚡ Pot. apto', icon:'⚡' };
-  return { col:'var(--rojo)', bg:'#fff0ed', brd:'#f5c6c2', tag:'🚫 No apto', icon:'🚫' };
+// ═══════════════════════════════════════════════
+function estadoCfg(estado) {
+  if (estado==='apto')     return { col:'var(--verde-medio)', bg:'#e8f5f0', brd:'var(--verde-menta)', tag:'✅ Apto' };
+  if (estado==='pot_apto') return { col:'#8b5e00', bg:'#fef9e7', brd:'#f5dfa0', tag:'⚡ Pot. apto' };
+  return { col:'var(--rojo)', bg:'#fff0ed', brd:'#f5c6c2', tag:'🚫 No apto' };
 }
 
 function renderListaPredios() {
   var predios = [];
-  try { predios = JSON.parse(localStorage.getItem('ecornsc_predios') || '[]'); } catch(e){}
+  try { predios = JSON.parse(localStorage.getItem('ecornsc_predios')||'[]'); } catch(e){}
   var container = document.getElementById('lista-predios');
   var strip = document.getElementById('resumen-strip');
 
@@ -829,172 +741,172 @@ function renderListaPredios() {
   }
 
   strip.style.display = 'grid';
-  var aptos = predios.filter(function(p){ return p.puntajes && p.puntajes.esApto; }).length;
-  var sumIAP = predios.reduce(function(a,p){ return a + ((p.puntajes && p.puntajes.IAP) || 0); }, 0);
+  var aptos   = predios.filter(function(p){ return p.puntajes && p.puntajes.esApto; }).length;
+  var sumIAP  = predios.reduce(function(a,p){ return a+((p.puntajes&&p.puntajes.IAP)||0); }, 0);
   document.getElementById('res-total').textContent = predios.length;
   document.getElementById('res-aptos').textContent = aptos;
-  document.getElementById('res-prom').textContent  = fmt2(sumIAP / predios.length);
+  document.getElementById('res-prom').textContent  = f2(sumIAP/predios.length);
 
   container.innerHTML = predios.map(function(p, i) {
-    var s   = p.puntajes || { IAP:0, VE:0, VSE:0, VUS:0, VSP:0, estado:'no_apto' };
-    var cfg = estadoConfig(s.estado);
-    return '<div class="predio-list-card" onclick="verDetalle(' + i + ')">'
+    var s   = p.puntajes || { IAP:0, estado:'no_apto' };
+    var cfg = estadoCfg(s.estado);
+    return '<div class="predio-list-card" onclick="verDetalle('+i+')">'
       + '<div class="predio-list-left">'
-      +   '<div class="predio-list-name">' + (p.reserva||'Sin nombre') + '</div>'
-      +   '<div class="predio-list-sub">👤 ' + (p.propietario||'—') + '</div>'
-      +   '<div class="predio-list-sub">📍 ' + (p.vereda||'—') + ' · 🌿 ' + (p.area||'—') + ' Ha · ' + (p.fecha||'') + '</div>'
-      +   '<span class="predio-status-tag" style="background:' + cfg.bg + ';color:' + cfg.col + ';">' + cfg.tag + '</span>'
+      +   '<div class="predio-list-name">'+(p.reserva||'Sin nombre')+'</div>'
+      +   '<div class="predio-list-sub">👤 '+(p.propietario||'—')+'</div>'
+      +   '<div class="predio-list-sub">📍 '+(p.vereda||'—')+' · 🌿 '+(p.area||'—')+' Ha · '+(p.fecha||'')+'</div>'
+      +   '<span class="predio-status-tag" style="background:'+cfg.bg+';color:'+cfg.col+';">'+cfg.tag+'</span>'
       + '</div>'
       + '<div class="iap-display">'
-      +   '<div class="iap-value" style="color:' + cfg.col + ';">' + fmt2(s.IAP) + '</div>'
-      +   '<div class="iap-label" style="color:' + cfg.col + ';">IAP</div>'
+      +   '<div class="iap-value" style="color:'+cfg.col+';">'+(isNaN(s.IAP)?'—':f2(s.IAP))+'</div>'
+      +   '<div class="iap-label" style="color:'+cfg.col+';">IAP</div>'
       + '</div>'
       + '</div>';
   }).join('');
 }
 
-// ═══════════════════════════════════════════════════
-//  DETALLE PREDIO
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
+//  DETALLE
+// ═══════════════════════════════════════════════
 function verDetalle(idx) {
   var predios = [];
-  try { predios = JSON.parse(localStorage.getItem('ecornsc_predios') || '[]'); } catch(e){}
-  var p = predios[idx];
-  if (!p) return;
+  try { predios = JSON.parse(localStorage.getItem('ecornsc_predios')||'[]'); } catch(e){}
+  var p = predios[idx]; if (!p) return;
 
   document.getElementById('vista-lista').style.display   = 'none';
   document.getElementById('vista-detalle').style.display = 'block';
-  window.scrollTo(0, 0);
+  window.scrollTo(0,0);
 
   var s   = p.puntajes || { VE:0,VSE:0,VUS:0,VSP:0,IAP:0,estado:'no_apto',variablesZero:[],causaNoApto:'puntaje' };
-  var cfg = estadoConfig(s.estado);
+  var cfg = estadoCfg(s.estado);
 
-  // Alerta de no aptitud
+  var hdrGrad = s.estado==='apto'
+    ? 'linear-gradient(135deg,#2d6a4f,#52b788)'
+    : s.estado==='pot_apto'
+      ? 'linear-gradient(135deg,#8b5e00,#c9a84c)'
+      : 'linear-gradient(135deg,#8b2020,#c0392b)';
+
   var alertaHtml = '';
   if (s.estado !== 'apto') {
     if (s.causaNoApto === 'exclusion') {
-      var nombres = (s.variablesZero || []).map(function(k){ return VAR_LABELS[k]||k; }).join('<br>');
+      var nombres = (s.variablesZero||[]).map(function(k){ return '• '+(VAR_LABELS[k]||k); }).join('<br>');
       alertaHtml = '<div class="alerta-box rojo"><div class="alerta-icon">🚫</div><div>'
         + '<div class="alerta-title">Criterios de exclusión activados</div>'
-        + '<div class="alerta-text">Las siguientes variables tienen valor 0 y descalifican automáticamente el predio:<br><br><strong>' + nombres + '</strong></div>'
+        + '<div class="alerta-text">Las siguientes variables tienen valor 0 y descalifican automáticamente:<br><br><strong>'+nombres+'</strong></div>'
         + '</div></div>';
     } else {
       alertaHtml = '<div class="alerta-box ambar"><div class="alerta-icon">📊</div><div>'
         + '<div class="alerta-title">Puntaje insuficiente</div>'
-        + '<div class="alerta-text">IAP obtenido: <strong>' + fmt2(s.IAP) + '</strong>. Se requiere IAP &gt; 1.5 para ser Apto, o &gt; 0.8 para Potencialmente Apto.</div>'
+        + '<div class="alerta-text">IAP obtenido: <strong>'+f2(s.IAP)+'</strong>. Umbral mínimo: 0.80 para Potencialmente apto y 1.50 para Apto.</div>'
         + '</div></div>';
     }
   }
 
-  // Barras de sub-índices (escala 0-2 para VE/VSE/VUS, 0-2.33 para VSP)
-  var veBar  = Math.min(100, Math.round((s.VE  / 2)    * 100));
-  var vseBar = Math.min(100, Math.round((s.VSE / 2)    * 100));
-  var vusBar = Math.min(100, Math.round((s.VUS / 2)    * 100));
-  var vspBar = Math.min(100, Math.round((s.VSP / 2.33) * 100));
+  var veBar  = Math.min(100, Math.round((s.VE  /2)*100));
+  var vseBar = Math.min(100, Math.round((s.VSE /2)*100));
+  var vusBar = Math.min(100, Math.round((s.VUS /2)*100));
+  var vspBar = Math.min(100, Math.round((s.VSP /2.33)*100));
 
   document.getElementById('detalle-contenido').innerHTML =
-    '<div style="background:' + (s.estado==='apto'?'linear-gradient(135deg,#2d6a4f,#52b788)':s.estado==='pot_apto'?'linear-gradient(135deg,#8b5e00,#c9a84c)':'linear-gradient(135deg,#8b2020,#c0392b)') + ';padding:20px 24px 8px;color:white;">'
+    '<div style="background:'+hdrGrad+';padding:20px 24px 8px;color:white;">'
     + '<div style="font-size:11px;opacity:0.75;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;">Índice de Aptitud del Predio</div>'
     + '<div class="iap-hero">'
-    +   '<div class="iap-big">' + fmt2(s.IAP) + '</div>'
+    +   '<div class="iap-big">'+f2(s.IAP)+'</div>'
     +   '<div class="iap-meta">'
-    +     '<div class="iap-meta-label">' + cfg.tag + '</div>'
+    +     '<div class="iap-meta-label">'+cfg.tag+'</div>'
     +     '<div class="iap-meta-thresh">✅ Apto si IAP &gt; 1.5<br>⚡ Pot. apto 0.8–1.5<br>🚫 No apto si IAP ≤ 0.8</div>'
     +   '</div>'
     + '</div>'
-    + '<div style="font-family:\'Playfair Display\',serif;font-size:17px;font-weight:700;text-align:center;padding-bottom:16px;">' + (p.reserva||'Sin nombre') + ' · ' + (p.fecha||'') + '</div>'
+    + '<div style="font-family:\'Playfair Display\',serif;font-size:17px;font-weight:700;text-align:center;padding-bottom:16px;">'+(p.reserva||'Sin nombre')+' · '+(p.fecha||'')+'</div>'
     + '</div>'
-
     + '<div class="scores-grid">'
-    + mkScoreItem('🌿 VE — Ecológico', fmt2(s.VE), 'max 2.0', veBar,  'linear-gradient(90deg,#2d6a4f,#52b788)',  '0.30·VE en IAP')
-    + mkScoreItem('♻️ VSE — Servicios', fmt2(s.VSE), 'max 2.0', vseBar, 'linear-gradient(90deg,#1e6091,#48cae4)', '0.25·VSE en IAP')
-    + mkScoreItem('🌾 VUS — Uso suelo', fmt2(s.VUS), 'max 2.0', vusBar, 'linear-gradient(90deg,#6b8c3e,#95d5b2)', '0.25·VUS en IAP')
-    + mkScoreItem('🤝 VSP — Socioprod.', fmt2(s.VSP), 'max 2.33', vspBar,'linear-gradient(90deg,#8b5e3c,#c9a84c)', '0.20·VSP en IAP')
+    + mkBar('🌿 VE — Ecológico',    f2(s.VE),  'max 2.0', veBar,  'linear-gradient(90deg,#2d6a4f,#52b788)')
+    + mkBar('♻️ VSE — Servicios',   f2(s.VSE), 'max 2.0', vseBar, 'linear-gradient(90deg,#1e6091,#48cae4)')
+    + mkBar('🌾 VUS — Uso suelo',   f2(s.VUS), 'max 2.0', vusBar, 'linear-gradient(90deg,#6b8c3e,#95d5b2)')
+    + mkBar('🤝 VSP — Socioprod.', f2(s.VSP), 'max 2.33',vspBar, 'linear-gradient(90deg,#8b5e3c,#c9a84c)')
     + '</div>'
-
     + '<div style="padding:16px 20px 0;">'
     + alertaHtml
     + mkSec('🏡 Identificación',[
-        ['Propietario',p.propietario],['Nombre del predio',p.nombrePredio],
-        ['Reserva',p.reserva],['Vereda',p.vereda],['Área',p.area?p.area+' Ha':null]
+        ['Propietario',p.propietario],['Predio',p.nombrePredio],
+        ['Reserva',p.reserva],['Vereda',p.vereda],['Área',p.area?p.area+' Ha':null],
+        ['Tipo de propiedad',p.tipoPropiedad],['N° escritura',p.escritura]
       ])
     + mkSec('📋 Estado Legal',[
         ['RNSC Registrada',p.rnscRegistrada==='si'?'Sí':p.rnscRegistrada==='no'?'No':null],
         p.rnscRegistrada==='si'?['N° registro',p.numRegistro]:null,
         ['Beneficiario PSA',p.psaBeneficiario==='si'?'Sí':p.psaBeneficiario==='no'?'No':null],
-        p.psaBeneficiario==='si'?['Convenio',p.convenio]:null,
-        ['Tipo de propiedad',p.tipoPropiedad],['N° escritura',p.escritura]
+        p.psaBeneficiario==='si'?['Convenio',p.convenio]:null
       ])
     + mkSecScored('🌿 Variables Ecológicas (VE)',[
-        ['CV — Cobertura vegetal', p.cobertura, p.s1, true],
-        ['PB — Presencia de bosque', p.bosque, p.s2, true],
-        ['EC — Estado de conservación', p.conservacion, p.s3, false],
-        ['BP — Biodiversidad percibida', p.biodiversidad, p.s4, false],
-        ['FH — Fuentes hídricas', p.fuentes, p.s5, false],
+        ['CV — Cobertura vegetal',p.cobertura,p.s1,true],
+        ['PB — Presencia de bosque',p.bosque,p.s2,true],
+        ['EC — Estado de conservación',p.conservacion,p.s3,false],
+        ['BP — Biodiversidad percibida',p.biodiversidad,p.s4,false],
+        ['FH — Fuentes hídricas',p.fuentes,p.s5,false]
       ], s.variablesZero||[])
     + mkSecScored('♻️ Variables Servicios Ecosistémicos (VSE)',[
-        ['RH — Regulación hídrica', p.regulacion, p.s6, false],
-        ['VP — Valor paisajístico', p.paisaje, p.s7, false],
-        ['CE — Conectividad ecológica', p.conectividad, p.s8, false],
+        ['RH — Regulación hídrica',p.regulacion,p.s6,false],
+        ['VP — Valor paisajístico',p.paisaje,p.s7,false],
+        ['CE — Conectividad ecológica',p.conectividad,p.s8,false]
       ], s.variablesZero||[])
-    + mkSecScored('🌾 Variables Uso del Suelo (VUS)',[
-        ['USA — Uso del suelo actual', p.usoSuelo, p.s9, true],
-        ['PS — Prácticas sostenibles', p.practicas, p.s10, false],
-        ['PA — Presión ambiental', p.presion, p.s11, true],
+    + mkSecScored('🌾 Variables Usos del Suelo (VUS)',[
+        ['USA — Uso del suelo actual',p.usoSuelo,p.s9,true],
+        ['PS — Prácticas sostenibles',p.practicas,p.s10,false],
+        ['PA — Presión ambiental',p.presion,p.s11,true]
       ], s.variablesZero||[])
     + mkSecScored('🤝 Variables Socioproductivas (VSP)',[
-        ['CP — Capacidad productiva', p.capacidad, p.s12, false],
-        ['PT — Potencial turístico', p.turismo, p.s13, false],
-        ['TSE — Tipo de servicio ecosistémico', p.tipoServicio, p.s14, false],
+        ['CP — Capacidad productiva',p.capacidad,p.s12,false],
+        ['PT — Potencial turístico',p.turismo,p.s13,false],
+        ['TSE — Tipo de servicio ecosistémico',p.tipoServicio,p.s14,false]
       ], s.variablesZero||[])
-    + (p.descripcion ? '<div class="detalle-section"><div class="detalle-section-title">📝 Descripción</div><p style="font-size:13px;color:var(--texto-medio);line-height:1.7;">' + p.descripcion + '</p></div>' : '')
+    + (p.descripcion ? '<div class="detalle-section"><div class="detalle-section-title">📝 Descripción</div><p style="font-size:13px;color:var(--texto-medio);line-height:1.7;">'+p.descripcion+'</p></div>' : '')
     + '</div>';
 
   document.getElementById('btn-eliminar').onclick = function(){ eliminarPredio(idx); };
 }
 
-function mkScoreItem(label, val, maxLabel, pct, gradient, footnote) {
+function mkBar(label, val, maxLabel, pct, grad) {
   return '<div class="score-item">'
-    + '<div class="score-label">' + label + '</div>'
-    + '<div class="score-bar-bg"><div class="score-bar" style="width:' + pct + '%;background:' + gradient + ';"></div></div>'
-    + '<div class="score-value">' + val + '</div>'
-    + '<div class="score-sub">' + maxLabel + ' · ' + footnote + '</div>'
+    + '<div class="score-label">'+label+'</div>'
+    + '<div class="score-bar-bg"><div class="score-bar" style="width:'+pct+'%;background:'+grad+';"></div></div>'
+    + '<div class="score-value">'+val+'</div>'
+    + '<div class="score-sub">'+maxLabel+'</div>'
     + '</div>';
 }
 
 function mkSec(titulo, campos) {
   var filas = campos.filter(Boolean).filter(function(f){ return f && f[1]; })
-    .map(function(f){ return '<div class="detalle-row"><span class="detalle-key">' + f[0] + '</span><span class="detalle-val">' + f[1] + '</span></div>'; })
+    .map(function(f){ return '<div class="detalle-row"><span class="detalle-key">'+f[0]+'</span><span class="detalle-val">'+f[1]+'</span></div>'; })
     .join('');
-  return filas ? '<div class="detalle-section"><div class="detalle-section-title">' + titulo + '</div>' + filas + '</div>' : '';
+  return filas ? '<div class="detalle-section"><div class="detalle-section-title">'+titulo+'</div>'+filas+'</div>' : '';
 }
 
-function mkSecScored(titulo, campos, variablesZero) {
-  var filas = campos.filter(function(f){ return f[1]; })
-    .map(function(f) {
-      var label = f[0], val = f[1], score = f[2], esExclusion = f[3];
-      var isZero = score === 0 || score === '0';
-      var scoreStr = (score !== undefined && score !== null && score >= 0) ? (' (' + score + ' pts)') : '';
-      return '<div class="detalle-row' + (isZero?' zero-flag':'') + '">'
-        + '<span class="detalle-key">' + (isZero && esExclusion ? '🚫 ' : '') + '<b>' + label + '</b>'
-        + (esExclusion ? '<br><span style="font-size:10px;color:#c0392b;font-weight:600;">Criterio de exclusión</span>' : '')
-        + '</span>'
-        + '<span class="detalle-val' + (isZero?' zero':'') + '">' + val + scoreStr + '</span>'
-        + '</div>';
-    }).join('');
-  return filas ? '<div class="detalle-section"><div class="detalle-section-title">' + titulo + '</div>' + filas + '</div>' : '';
+function mkSecScored(titulo, campos, varZero) {
+  var filas = campos.filter(function(f){ return f[1]; }).map(function(f) {
+    var label=f[0], val=f[1], score=f[2], esExcl=f[3];
+    var isZero = (score===0 || score==='0');
+    var scoreStr = (score!==undefined && score!==null && score>=0) ? ' ('+score+' pts)' : '';
+    return '<div class="detalle-row'+(isZero?' zero-flag':'')+'">'
+      + '<span class="detalle-key">'+(isZero&&esExcl?'🚫 ':'')+'<b>'+label+'</b>'
+      + (esExcl ? '<br><span style="font-size:10px;color:var(--rojo);font-weight:600;">Criterio excluyente</span>' : '')
+      + '</span>'
+      + '<span class="detalle-val'+(isZero?' zero':'')+'">'+val+scoreStr+'</span>'
+      + '</div>';
+  }).join('');
+  return filas ? '<div class="detalle-section"><div class="detalle-section-title">'+titulo+'</div>'+filas+'</div>' : '';
 }
 
 function volverLista() {
   document.getElementById('vista-detalle').style.display = 'none';
   document.getElementById('vista-lista').style.display   = 'block';
-  window.scrollTo(0, 0);
+  window.scrollTo(0,0);
 }
 
 function eliminarPredio(idx) {
   if (!confirm('¿Eliminar este predio? Esta acción no se puede deshacer.')) return;
   var predios = [];
-  try { predios = JSON.parse(localStorage.getItem('ecornsc_predios') || '[]'); } catch(e){}
+  try { predios = JSON.parse(localStorage.getItem('ecornsc_predios')||'[]'); } catch(e){}
   predios.splice(idx, 1);
   localStorage.setItem('ecornsc_predios', JSON.stringify(predios));
   updateBadge(); updateHome();
@@ -1002,40 +914,38 @@ function eliminarPredio(idx) {
   volverLista(); renderListaPredios();
 }
 
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
 //  BADGE Y HOME
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
 function updateBadge() {
   var n = 0;
-  try { n = JSON.parse(localStorage.getItem('ecornsc_predios') || '[]').length; } catch(e){}
+  try { n = JSON.parse(localStorage.getItem('ecornsc_predios')||'[]').length; } catch(e){}
   var b = document.getElementById('badge-count');
-  b.textContent = n; b.style.display = n > 0 ? 'flex' : 'none';
+  b.textContent = n; b.style.display = n>0 ? 'flex' : 'none';
 }
 
 function updateHome() {
   var predios = [];
-  try { predios = JSON.parse(localStorage.getItem('ecornsc_predios') || '[]'); } catch(e){}
-  var nm  = document.getElementById('home-reserva-name');
-  var sub = document.getElementById('home-reserva-sub');
-  var st  = document.getElementById('home-status');
+  try { predios = JSON.parse(localStorage.getItem('ecornsc_predios')||'[]'); } catch(e){}
+  var nm=document.getElementById('home-reserva-name'),
+      sub=document.getElementById('home-reserva-sub'),
+      st=document.getElementById('home-status');
   if (!predios.length) {
-    nm.textContent  = 'EcoRNSC Conecta';
-    sub.textContent = '📋 Registra tu primer predio';
-    st.textContent  = '📝 Sin predios';
-    st.style.cssText = 'background:#f5f0e8;color:var(--tierra);border-color:var(--crema-oscuro);margin-left:auto;font-size:11px;font-weight:700;padding:5px 10px;border-radius:20px;border:1px solid;white-space:nowrap;';
+    nm.textContent='EcoRNSC Conecta'; sub.textContent='📋 Registra tu primer predio';
+    st.textContent='📝 Sin predios';
+    st.style.cssText='background:#f5f0e8;color:var(--tierra);border-color:var(--crema-oscuro);margin-left:auto;font-size:11px;font-weight:700;padding:5px 10px;border-radius:20px;border:1px solid;white-space:nowrap;';
   } else {
-    var u   = predios[predios.length - 1];
-    var cfg = estadoConfig(u.puntajes ? u.puntajes.estado : 'no_apto');
-    nm.textContent  = u.reserva || 'Mi reserva';
-    sub.textContent = '👤 ' + (u.propietario||'—') + ' · ' + predios.length + ' predio' + (predios.length>1?'s':'');
-    st.textContent  = cfg.tag + ' IAP ' + fmt2((u.puntajes||{IAP:0}).IAP);
-    st.style.cssText = 'background:' + cfg.bg + ';color:' + cfg.col + ';border-color:' + cfg.brd + ';margin-left:auto;font-size:11px;font-weight:700;padding:5px 10px;border-radius:20px;border:1px solid;white-space:nowrap;';
+    var u=predios[predios.length-1], cfg=estadoCfg(u.puntajes?u.puntajes.estado:'no_apto');
+    nm.textContent=u.reserva||'Mi reserva';
+    sub.textContent='👤 '+(u.propietario||'—')+' · '+predios.length+' predio'+(predios.length>1?'s':'');
+    st.textContent=cfg.tag;
+    st.style.cssText='background:'+cfg.bg+';color:'+cfg.col+';border-color:'+cfg.brd+';margin-left:auto;font-size:11px;font-weight:700;padding:5px 10px;border-radius:20px;border:1px solid;white-space:nowrap;';
   }
 }
 
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
 //  INIT
-// ═══════════════════════════════════════════════════
+// ═══════════════════════════════════════════════
 document.getElementById('btn-submit').addEventListener('click', submitForm);
 updateBadge();
 updateHome();
