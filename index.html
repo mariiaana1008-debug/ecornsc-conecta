@@ -62,7 +62,6 @@
   .radio-item.selected{border-color:var(--verde-claro);background:#f0faf5;color:var(--verde-bosque);font-weight:600;}
   .conditional-field{display:none;}
   .conditional-field.visible{display:block;}
-  .exclusion-badge{display:inline-block;font-size:10px;font-weight:700;color:var(--rojo);background:#fff0ed;border:1px solid #f5c6c2;padding:2px 8px;border-radius:8px;margin-left:6px;vertical-align:middle;}
   /* lista */
   .predio-list-card{background:white;border-radius:16px;margin:0 20px 12px;padding:16px;box-shadow:var(--sombra);display:flex;align-items:center;gap:14px;cursor:pointer;border:1.5px solid transparent;transition:all 0.22s;}
   .predio-list-card:hover{border-color:var(--verde-claro);transform:translateY(-2px);box-shadow:var(--sombra-grande);}
@@ -257,7 +256,7 @@
     <!-- VARIABLES ECOLÓGICAS — VE = (CV+PB+EC+BP+FH)/5  peso 0.30 -->
     <div class="form-section-title">🌿 Variables Ecológicas (VE · peso 30%)</div>
     <div class="form-group">
-      <label class="form-label">CV — Cobertura vegetal <span class="req">*</span><span class="exclusion-badge">🚫 Excluyente</span></label>
+      <label class="form-label">CV — Cobertura vegetal <span class="req">*</span></label>
       <select id="f-cobertura" class="form-select" data-exclusion="true">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Alta (>70%)" data-score="2">Alta (&gt;70%)</option>
@@ -266,7 +265,7 @@
       </select>
     </div>
     <div class="form-group">
-      <label class="form-label">PB — Presencia de bosque <span class="req">*</span><span class="exclusion-badge">🚫 Excluyente</span></label>
+      <label class="form-label">PB — Presencia de bosque <span class="req">*</span></label>
       <select id="f-bosque" class="form-select" data-exclusion="true">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Sí" data-score="2">Sí</option>
@@ -335,7 +334,7 @@
     <!-- VARIABLES USOS DEL SUELO — VUS = (USA+PS+PA)/3  peso 0.25 -->
     <div class="form-section-title">🌾 Variables Usos del Suelo (VUS · peso 25%)</div>
     <div class="form-group">
-      <label class="form-label">USA — Uso del suelo actual <span class="req">*</span><span class="exclusion-badge">🚫 Excluyente</span></label>
+      <label class="form-label">USA — Uso del suelo actual <span class="req">*</span></label>
       <select id="f-uso-suelo" class="form-select" data-exclusion="true">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Conservación / sostenible" data-score="2">Conservación / sostenible</option>
@@ -353,7 +352,7 @@
       </select>
     </div>
     <div class="form-group">
-      <label class="form-label">PA — Presión ambiental <span class="req">*</span><span class="exclusion-badge">🚫 Excluyente</span></label>
+      <label class="form-label">PA — Presión ambiental <span class="req">*</span></label>
       <select id="f-presion" class="form-select" data-exclusion="true">
         <option value="" data-score="-1">Selecciona...</option>
         <option value="Baja" data-score="2">Baja</option>
@@ -889,7 +888,6 @@ function mkSecScored(titulo, campos, varZero) {
     var scoreStr = (score!==undefined && score!==null && score>=0) ? ' ('+score+' pts)' : '';
     return '<div class="detalle-row'+(isZero?' zero-flag':'')+'">'
       + '<span class="detalle-key">'+(isZero&&esExcl?'🚫 ':'')+'<b>'+label+'</b>'
-      + (esExcl ? '<br><span style="font-size:10px;color:var(--rojo);font-weight:600;">Criterio excluyente</span>' : '')
       + '</span>'
       + '<span class="detalle-val'+(isZero?' zero':'')+'">'+val+scoreStr+'</span>'
       + '</div>';
