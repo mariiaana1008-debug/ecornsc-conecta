@@ -15,7 +15,6 @@
   *{margin:0;padding:0;box-sizing:border-box;}
   body{font-family:'DM Sans',sans-serif;background:var(--crema);color:var(--texto-oscuro);min-height:100vh;overflow-x:hidden;max-width:480px;margin:0 auto;}
 
-  /* NAV */
   .nav-bottom{position:fixed;bottom:0;left:0;right:0;background:var(--verde-bosque);display:flex;justify-content:space-around;align-items:center;padding:10px 0 16px;z-index:1000;border-top:2px solid var(--verde-claro);box-shadow:0 -4px 24px rgba(26,58,42,0.25);max-width:480px;margin:0 auto;}
   .nav-item{display:flex;flex-direction:column;align-items:center;gap:4px;cursor:pointer;padding:6px 12px;border-radius:12px;transition:all 0.25s;color:var(--verde-menta);opacity:0.6;}
   .nav-item.active{opacity:1;color:var(--verde-claro);background:rgba(82,183,136,0.12);}
@@ -23,12 +22,10 @@
   .nav-badge{position:absolute;top:-4px;right:-8px;background:var(--tierra);color:white;font-size:9px;font-weight:800;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
   .nav-label{font-size:10px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;}
 
-  /* PAGES */
   .page{display:none;min-height:calc(100vh - 70px);padding-bottom:80px;animation:fadeIn 0.4s ease;}
   .page.active{display:block;}
   @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 
-  /* INICIO */
   .hero-banner{background:linear-gradient(160deg,var(--verde-bosque) 0%,var(--verde-medio) 60%,var(--verde-claro) 100%);padding:48px 24px 40px;position:relative;overflow:hidden;}
   .hero-banner::after{content:'🌿';position:absolute;bottom:-10px;right:20px;font-size:80px;opacity:0.12;}
   .hero-badge{display:inline-block;background:rgba(149,213,178,0.18);border:1px solid rgba(149,213,178,0.4);color:var(--verde-menta);font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:5px 12px;border-radius:20px;margin-bottom:14px;}
@@ -50,12 +47,10 @@
   .tip-card{flex-shrink:0;width:200px;background:linear-gradient(135deg,var(--verde-bosque),var(--verde-medio));border-radius:16px;padding:18px;color:white;}
   .tip-emoji{font-size:28px;margin-bottom:8px;}.tip-title{font-weight:700;font-size:13px;margin-bottom:4px;}.tip-text{font-size:11px;opacity:0.8;line-height:1.5;}
 
-  /* HEADERS */
   .page-header{background:linear-gradient(135deg,var(--verde-bosque),var(--verde-medio));padding:36px 24px 28px;color:white;}
   .page-header-title{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;margin-bottom:6px;}
   .page-header-sub{font-size:13px;opacity:0.75;}
 
-  /* FORM */
   .form-container{padding:20px;}
   .form-group{margin-bottom:18px;}
   .form-label{display:block;font-weight:600;font-size:13px;color:var(--verde-bosque);margin-bottom:7px;}
@@ -84,7 +79,6 @@
   .score-hint{font-size:11px;font-weight:600;margin-top:5px;padding:4px 10px;border-radius:8px;display:none;}
   .score-hint.visible{display:inline-block;}
 
-  /* RESULTADOS */
   .predio-list-card{background:white;border-radius:16px;margin:0 20px 12px;padding:16px;box-shadow:var(--sombra);display:flex;align-items:center;gap:14px;cursor:pointer;border:1.5px solid transparent;transition:all 0.22s;}
   .predio-list-card:hover{border-color:var(--verde-claro);transform:translateY(-2px);box-shadow:var(--sombra-grande);}
   .predio-list-left{flex:1;min-width:0;}
@@ -103,7 +97,6 @@
   .resumen-num{font-family:'Playfair Display',serif;font-size:20px;font-weight:700;color:var(--verde-medio);}
   .resumen-label{font-size:10px;color:var(--texto-medio);font-weight:600;margin-top:2px;}
 
-  /* DETALLE */
   .back-btn{display:flex;align-items:center;gap:8px;padding:14px 20px;background:rgba(255,255,255,0.15);color:white;font-size:13px;font-weight:600;cursor:pointer;border:none;font-family:'DM Sans',sans-serif;width:100%;}
   .detalle-section{background:white;border-radius:14px;padding:18px;margin-bottom:12px;box-shadow:var(--sombra);}
   .detalle-section-title{font-family:'Playfair Display',serif;font-size:14px;font-weight:700;color:var(--verde-bosque);margin-bottom:12px;padding-bottom:8px;border-bottom:1.5px solid var(--crema-oscuro);}
@@ -117,10 +110,13 @@
   .alerta-zero-icon{font-size:20px;flex-shrink:0;}
   .alerta-zero-title{font-size:13px;font-weight:700;color:var(--rojo);margin-bottom:4px;}
   .alerta-zero-text{font-size:12px;color:#8b2020;line-height:1.5;}
+  .alerta-puntaje{background:#fff8ed;border:1.5px solid #f5dfa0;border-radius:12px;padding:14px 16px;margin-bottom:12px;display:flex;gap:10px;align-items:flex-start;}
+  .alerta-puntaje-icon{font-size:20px;flex-shrink:0;}
+  .alerta-puntaje-title{font-size:13px;font-weight:700;color:#8b5e00;margin-bottom:4px;}
+  .alerta-puntaje-text{font-size:12px;color:#7a5200;line-height:1.5;}
   .delete-btn{display:flex;align-items:center;justify-content:center;gap:6px;width:calc(100% - 40px);margin:0 20px 16px;padding:12px;background:#fff0ed;color:var(--rojo);border:1.5px solid #f5c6c2;border-radius:12px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;}
   .delete-btn:hover{background:#ffe0da;}
 
-  /* SCORES */
   .scores-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--crema-oscuro);}
   .score-item{background:white;padding:18px 16px;text-align:center;}
   .score-label{font-size:11px;color:var(--texto-medio);font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px;}
@@ -128,7 +124,6 @@
   .score-bar{height:100%;border-radius:4px;}
   .score-value{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;color:var(--verde-bosque);}
 
-  /* MERCADO */
   .filtros-scroll{display:flex;gap:8px;padding:16px 20px;overflow-x:auto;scrollbar-width:none;}
   .filtros-scroll::-webkit-scrollbar{display:none;}
   .filtro-btn{flex-shrink:0;padding:8px 18px;border-radius:20px;border:1.5px solid var(--crema-oscuro);background:white;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;color:var(--texto-medio);cursor:pointer;white-space:nowrap;}
@@ -145,10 +140,7 @@
   .btn-wa{display:flex;align-items:center;justify-content:center;gap:5px;width:100%;margin-top:8px;padding:8px;background:#25D366;color:white;border:none;border-radius:10px;font-size:11px;font-weight:700;cursor:pointer;font-family:'DM Sans',sans-serif;}
   .btn-wa:hover{background:#1daa55;}
 
-  /* PERFIL */
   .perfil-hero{background:linear-gradient(160deg,var(--verde-bosque) 0%,var(--verde-medio) 70%,var(--verde-claro) 100%);padding:40px 24px 60px;text-align:center;position:relative;overflow:hidden;}
-  .perfil-hero::before{content:'🌲';position:absolute;left:-10px;bottom:-10px;font-size:100px;opacity:0.08;}
-  .perfil-hero::after{content:'🦋';position:absolute;right:10px;top:20px;font-size:60px;opacity:0.1;}
   .perfil-avatar{width:80px;height:80px;background:rgba(255,255,255,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:40px;margin:0 auto 14px;border:3px solid rgba(255,255,255,0.4);}
   .perfil-nombre{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;color:white;margin-bottom:4px;}
   .perfil-ubicacion{color:rgba(255,255,255,0.7);font-size:13px;margin-bottom:16px;}
@@ -174,14 +166,12 @@
   .contacto-btn.wa{background:#25D366;color:white;}
   .contacto-btn.ig{background:white;color:var(--verde-bosque);}
 
-  /* MODAL */
   .modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:2000;align-items:flex-end;justify-content:center;}
   .modal-overlay.show{display:flex;}
   .modal-content{background:var(--crema);border-radius:24px 24px 0 0;padding:28px 24px;width:100%;max-height:85vh;overflow-y:auto;animation:slideUp 0.35s ease;}
   @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
   .modal-handle{width:40px;height:4px;background:var(--crema-oscuro);border-radius:2px;margin:-12px auto 20px;}
 
-  /* TOAST */
   .toast{position:fixed;top:20px;left:50%;transform:translateX(-50%) translateY(-80px);background:var(--verde-bosque);color:white;padding:12px 24px;border-radius:30px;font-size:13px;font-weight:600;z-index:3000;transition:transform 0.4s;white-space:nowrap;box-shadow:0 4px 20px rgba(0,0,0,0.25);}
   .toast.show{transform:translateX(-50%) translateY(0);}
 </style>
@@ -549,7 +539,6 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ── Etiquetas de variables para mostrar en alertas ──
 const VAR_LABELS = {
   s1:'Cobertura vegetal', s2:'Presencia de bosque', s3:'Estado de conservación',
   s4:'Biodiversidad percibida', s5:'Fuentes hídricas',
@@ -587,7 +576,7 @@ function showScoreHint(sel, hintId) {
   const score = parseInt(opt.dataset.score ?? -1);
   const hint  = document.getElementById(hintId);
   if (!hint || score < 0 || !opt.value) { if (hint) hint.classList.remove('visible'); return; }
-  const labels = ['0 pts — ⚠️ CRITERIO NO APTO','1 pt — impacto medio','2 pts — alto impacto','3 pts — máximo impacto'];
+  const labels = ['0 pts — ⚠️ CRITERIO NO APTO', '1 pt — impacto medio', '2 pts — alto impacto', '3 pts — máximo impacto'];
   const colors  = ['#c0392b','#c9a84c','#2d6a4f','#1a3a2a'];
   const bgs     = ['#fff0ed','#fef9e7','#e8f5f0','#d4edda'];
   hint.textContent = '⚡ ' + (labels[score] ?? score+' pts');
@@ -608,22 +597,22 @@ function showToast(msg) {
   setTimeout(() => t.classList.remove('show'), 3000);
 }
 
-// ── HELPER: score de un select (retorna -1 si no hay selección) ──
+// ── HELPER: score de un select ──
 function optScore(id) {
   const el = document.getElementById(id);
-  if (!el || !el.value) return -1; // no respondido
+  if (!el || !el.value) return -1;
   return parseInt(el.options[el.selectedIndex].dataset.score ?? 0);
 }
 
 // ── SCORING ──
-// Regla de no aptitud: si CUALQUIER variable respondida tiene score 0 → no apto
-// Ecológico   s1–s5:  max 10  → (sum/10)*100
-// Servicios   s6–s8:  max  6  → (sum/6)*100
-// Uso suelo   s9–s11: max  6  → (sum/6)*100
-// Socioprod.  s12–s14: max 7  → (sum/7)*100
+// Reglas:
+//   • Si cualquier variable respondida tiene score 0  → No apto (criterio eliminatorio)
+//   • Si total < 60                                   → No apto (puntaje insuficiente)
+//   • Si ningún cero Y total >= 60                    → Apto
+// No existe estado intermedio. El resultado es siempre inmediato y binario.
 function calcularPuntaje(p) {
-  // Variables con su puntaje (sólo las respondidas entran al denominador)
-  const scored = [
+  // Detectar variables con puntaje 0 explícito
+  const scoredVars = [
     { key:'s1',  val:p.cobertura,    score:p.s1  },
     { key:'s2',  val:p.bosque,       score:p.s2  },
     { key:'s3',  val:p.conservacion, score:p.s3  },
@@ -640,31 +629,31 @@ function calcularPuntaje(p) {
     { key:'s14', val:p.tipoServicio, score:p.s14 },
   ];
 
-  // Detectar variables con puntaje 0 explícito (respondidas y con score 0)
-  const variablesZero = scored
+  const variablesZero = scoredVars
     .filter(v => v.val && v.val !== '' && (v.score === 0 || v.score === '0'))
     .map(v => v.key);
 
   const tieneZero = variablesZero.length > 0;
 
   // Puntajes por categoría (ignorar -1 = no respondido)
-  const s = (k) => (p[k] !== undefined && p[k] >= 0) ? p[k] : 0;
+  const s = k => (p[k] !== undefined && p[k] >= 0) ? Number(p[k]) : 0;
 
-  const ecoRaw  = s('s1')+s('s2')+s('s3')+s('s4')+s('s5');
-  const servRaw = s('s6')+s('s7')+s('s8');
-  const usoRaw  = s('s9')+s('s10')+s('s11');
-  const socRaw  = s('s12')+s('s13')+s('s14');
+  const ecoRaw   = s('s1')+s('s2')+s('s3')+s('s4')+s('s5');
+  const servRaw  = s('s6')+s('s7')+s('s8');
+  const usoRaw   = s('s9')+s('s10')+s('s11');
+  const socRaw   = s('s12')+s('s13')+s('s14');
 
-  const ecologico      = Math.round((ecoRaw  / 10) * 100);
-  const servicios      = Math.round((servRaw /  6) * 100);
-  const usoSuelo       = Math.round((usoRaw  /  6) * 100);
-  const socioproductivo= Math.round((socRaw  /  7) * 100);
-  const total          = Math.round((ecologico+servicios+usoSuelo+socioproductivo)/4);
+  const ecologico       = Math.round((ecoRaw  / 10) * 100);
+  const servicios       = Math.round((servRaw /  6) * 100);
+  const usoSuelo        = Math.round((usoRaw  /  6) * 100);
+  const socioproductivo = Math.round((socRaw  /  7) * 100);
+  const total           = Math.round((ecologico+servicios+usoSuelo+socioproductivo)/4);
 
-  // Apto = puntaje >= 60 Y ninguna variable con score 0
-  const esApto = !tieneZero && total >= 60;
+  // Resultado binario: apto o no apto. Sin estado intermedio.
+  const esApto          = !tieneZero && total >= 60;
+  const causaNoApto     = tieneZero ? 'zero' : (total < 60 ? 'puntaje' : null);
 
-  return { ecologico, servicios, usoSuelo, socioproductivo, total, esApto, variablesZero };
+  return { ecologico, servicios, usoSuelo, socioproductivo, total, esApto, variablesZero, causaNoApto };
 }
 
 // ── SUBMIT ──
@@ -728,10 +717,7 @@ function submitForm() {
   localStorage.setItem('ecornsc_predios', JSON.stringify(predios));
 
   resetForm(); updateBadge(); updateHome();
-  const msg = predio.puntajes.esApto
-    ? '✅ Predio guardado — Apto para PSA'
-    : '⚠️ Predio guardado — No apto para PSA';
-  showToast(msg);
+  showToast(predio.puntajes.esApto ? '✅ Predio guardado — APTO para PSA' : '🚫 Predio guardado — NO APTO para PSA');
   goPage('page-resultados');
 }
 
@@ -773,11 +759,10 @@ function renderListaPredios() {
   container.innerHTML = predios.map((p,i) => {
     const s    = p.puntajes || { total:0, esApto:false };
     const apta = s.esApto;
-    // Color del puntaje: verde si apto, rojo si tiene ceros, dorado si puntaje medio sin ceros
-    const col = apta ? 'var(--verde-medio)' : (s.variablesZero?.length ? 'var(--rojo)' : 'var(--dorado)');
-    const tagBg  = apta ? '#e8f5f0' : (s.variablesZero?.length ? '#fff0ed' : '#fef9e7');
-    const tagCol = apta ? 'var(--verde-medio)' : (s.variablesZero?.length ? 'var(--rojo)' : 'var(--dorado)');
-    const tagTxt = apta ? '✅ Apto PSA' : (s.variablesZero?.length ? '🚫 No apto' : '⚠️ En evaluación');
+    const col    = apta ? 'var(--verde-medio)' : 'var(--rojo)';
+    const tagBg  = apta ? '#e8f5f0' : '#fff0ed';
+    const tagCol = apta ? 'var(--verde-medio)' : 'var(--rojo)';
+    const tagTxt = apta ? '✅ Apto PSA' : '🚫 No apto';
 
     return `<div class="predio-list-card" onclick="verDetalle(${i})">
       <div class="predio-list-left">
@@ -803,26 +788,35 @@ function verDetalle(idx) {
   document.getElementById('vista-detalle').style.display = 'block';
   window.scrollTo(0,0);
 
-  const s    = p.puntajes || { ecologico:0,servicios:0,usoSuelo:0,socioproductivo:0,total:0,esApto:false,variablesZero:[] };
+  const s    = p.puntajes || { ecologico:0,servicios:0,usoSuelo:0,socioproductivo:0,total:0,esApto:false,variablesZero:[],causaNoApto:'puntaje' };
   const apta = s.esApto;
 
-  // Header color: verde=apto, rojo=no apto por cero, tierra=en evaluación
-  const hdr = apta
+  const hdr   = apta
     ? 'linear-gradient(135deg,#2d6a4f,#52b788)'
-    : (s.variablesZero?.length ? 'linear-gradient(135deg,#8b2020,#c0392b)' : 'linear-gradient(135deg,#8b5e3c,#c9a84c)');
+    : 'linear-gradient(135deg,#8b2020,#c0392b)';
+  const badge = apta ? '✅ APTO PARA PSA' : '🚫 NO APTO PARA PSA';
 
-  const badge = apta ? '✅ APTO PARA PSA'
-    : (s.variablesZero?.length ? '🚫 NO APTO PARA PSA' : '⚠️ EN EVALUACIÓN');
-
-  // Alerta de variables con cero
-  const alertaZero = s.variablesZero?.length ? `
-    <div class="alerta-zero">
-      <div class="alerta-zero-icon">🚫</div>
-      <div>
-        <div class="alerta-zero-title">Criterios que impiden la aptitud PSA</div>
-        <div class="alerta-zero-text">Las siguientes variables obtuvieron puntaje 0, lo que descalifica automáticamente el predio:<br><strong>${s.variablesZero.map(k => VAR_LABELS[k]||k).join(', ')}</strong></div>
-      </div>
-    </div>` : '';
+  // Explicación de no aptitud
+  let alertaHtml = '';
+  if (!apta) {
+    if (s.causaNoApto === 'zero') {
+      alertaHtml = `<div class="alerta-zero">
+        <div class="alerta-zero-icon">🚫</div>
+        <div>
+          <div class="alerta-zero-title">Criterios eliminatorios con puntaje 0</div>
+          <div class="alerta-zero-text">Las siguientes variables obtuvieron puntaje 0, lo que descalifica automáticamente el predio:<br><br><strong>${s.variablesZero.map(k => VAR_LABELS[k]||k).join('<br>')}</strong></div>
+        </div>
+      </div>`;
+    } else {
+      alertaHtml = `<div class="alerta-puntaje">
+        <div class="alerta-puntaje-icon">📊</div>
+        <div>
+          <div class="alerta-puntaje-title">Puntaje insuficiente para PSA</div>
+          <div class="alerta-puntaje-text">El predio obtuvo un puntaje total de <strong>${s.total}/100</strong>. Se requiere un mínimo de <strong>60/100</strong> sin ningún criterio en 0 para ser elegible al PSA.</div>
+        </div>
+      </div>`;
+    }
+  }
 
   const detEco  = `${nn(p.s1)}+${nn(p.s2)}+${nn(p.s3)}+${nn(p.s4)}+${nn(p.s5)} = ${sum(p,'s1','s2','s3','s4','s5')}/10`;
   const detServ = `${nn(p.s6)}+${nn(p.s7)}+${nn(p.s8)} = ${sum(p,'s6','s7','s8')}/6`;
@@ -831,7 +825,7 @@ function verDetalle(idx) {
 
   document.getElementById('detalle-contenido').innerHTML = `
     <div style="background:${hdr};padding:24px;color:white;text-align:center;">
-      <div style="font-size:48px;margin-bottom:10px;">${apta?'🏅':(s.variablesZero?.length?'🚫':'📋')}</div>
+      <div style="font-size:48px;margin-bottom:10px;">${apta?'🏅':'🚫'}</div>
       <div style="display:inline-block;background:white;color:${apta?'var(--verde-medio)':'var(--rojo)'};font-weight:800;font-size:13px;letter-spacing:1px;text-transform:uppercase;padding:6px 18px;border-radius:20px;">${badge}</div>
       <div style="font-family:'Playfair Display',serif;font-size:20px;font-weight:700;margin-top:10px;">${p.reserva||'Sin nombre'}</div>
       <div style="font-size:12px;opacity:0.8;margin-top:4px;">${p.nombrePredio||''} · ${p.fecha||''}</div>
@@ -843,7 +837,7 @@ function verDetalle(idx) {
       ${mkScore('🤝 Socio-prod.',s.socioproductivo,'linear-gradient(90deg,#8b5e3c,#c9a84c)',detSoc)}
     </div>
     <div style="padding:16px 20px 0;">
-      ${alertaZero}
+      ${alertaHtml}
       ${mkSec('🏡 Identificación del Predio',[
         ['Propietario',p.propietario],['Nombre del predio',p.nombrePredio],
         ['Nombre de la reserva',p.reserva],['Vereda',p.vereda],
@@ -862,22 +856,22 @@ function verDetalle(idx) {
         ['3. Estado de conservación',p.conservacion,p.s3],
         ['4. Biodiversidad percibida',p.biodiversidad,p.s4],
         ['5. Fuentes hídricas',p.fuentes,p.s5],
-      ], s.variablesZero)}
+      ], s.variablesZero||[])}
       ${mkSecScored('♻️ Variables Servicios Ecosistémicos',[
         ['6. Regulación hídrica',p.regulacion,p.s6],
         ['7. Valor paisajístico',p.paisaje,p.s7],
         ['8. Conectividad ecológica',p.conectividad,p.s8],
-      ], s.variablesZero)}
+      ], s.variablesZero||[])}
       ${mkSecScored('🌾 Variables Usos del Suelo',[
         ['9. Uso del suelo',p.usoSuelo,p.s9],
         ['10. Prácticas sostenibles',p.practicas,p.s10],
         ['11. Presión ambiental',p.presion,p.s11],
-      ], s.variablesZero)}
+      ], s.variablesZero||[])}
       ${mkSecScored('🤝 Variables Socioproductivas',[
         ['Capacidad productiva',p.capacidad,p.s12],
         ['Potencial turístico',p.turismo,p.s13],
         ['Tipo de servicio predominante',p.tipoServicio,p.s14],
-      ], s.variablesZero)}
+      ], s.variablesZero||[])}
       ${p.descripcion?`<div class="detalle-section"><div class="detalle-section-title">📝 Descripción</div><p style="font-size:13px;color:var(--texto-medio);line-height:1.7;">${p.descripcion}</p></div>`:''}
     </div>`;
 
@@ -885,7 +879,7 @@ function verDetalle(idx) {
 }
 
 function nn(v) { return (v !== undefined && v >= 0) ? v : '—'; }
-function sum(p, ...keys) { return keys.reduce((a,k) => a + (p[k] >= 0 ? p[k] : 0), 0); }
+function sum(p, ...keys) { return keys.reduce((a,k) => a + (p[k] >= 0 ? Number(p[k]) : 0), 0); }
 
 function mkScore(label, val, gradient, sub) {
   return `<div class="score-item">
@@ -903,12 +897,11 @@ function mkSec(titulo, campos) {
   return filas ? `<div class="detalle-section"><div class="detalle-section-title">${titulo}</div>${filas}</div>` : '';
 }
 
-// Sección con scores coloreados (rojo si es 0)
-function mkSecScored(titulo, campos, variablesZero=[]) {
-  const filas = campos.filter(([,v,s]) => v)
-    .map(([k,v,score], i) => {
+function mkSecScored(titulo, campos, variablesZero) {
+  const filas = campos.filter(([,v]) => v)
+    .map(([k,v,score]) => {
       const isZero = score === 0 || score === '0';
-      const valText = score !== undefined && score >= 0 ? `${v} (${score} pts)` : v;
+      const valText = (score !== undefined && score >= 0) ? `${v} (${score} pts)` : v;
       return `<div class="detalle-row${isZero?' zero-flag':''}">
         <span class="detalle-key">${isZero?'🚫 ':''}<b>${k}</b></span>
         <span class="detalle-val${isZero?' zero':''}">${valText}</span>
@@ -939,23 +932,26 @@ function updateBadge() {
   const b = document.getElementById('badge-count');
   b.textContent = n; b.style.display = n > 0 ? 'flex' : 'none';
 }
+
 function updateHome() {
   const predios = JSON.parse(localStorage.getItem('ecornsc_predios')||'[]');
-  const nm=document.getElementById('home-reserva-name'),
-        sub=document.getElementById('home-reserva-sub'),
-        st=document.getElementById('home-status');
+  const nm  = document.getElementById('home-reserva-name');
+  const sub = document.getElementById('home-reserva-sub');
+  const st  = document.getElementById('home-status');
   if (predios.length === 0) {
-    nm.textContent='EcoRNSC Conecta'; sub.textContent='📋 Registra tu primer predio';
+    nm.textContent='EcoRNSC Conecta';
+    sub.textContent='📋 Registra tu primer predio';
     st.textContent='📝 Sin predios';
     st.style.cssText='background:#f5f0e8;color:var(--tierra);border-color:var(--crema-oscuro);margin-left:auto;font-size:11px;font-weight:700;padding:5px 10px;border-radius:20px;border:1px solid;white-space:nowrap;';
   } else {
-    const u=predios[predios.length-1], apta=u.puntajes?.esApto, hasZero=u.puntajes?.variablesZero?.length;
-    nm.textContent=u.reserva||'Mi reserva';
-    sub.textContent=`👤 ${u.propietario||'—'} · ${predios.length} predio${predios.length>1?'s':''}`;
-    st.textContent= apta?'✅ Apto PSA': hasZero?'🚫 No apto':'⚠️ En evaluación';
-    const bg  = apta?'#e8f5f0':hasZero?'#fff0ed':'#fef9e7';
-    const col = apta?'var(--verde-medio)':hasZero?'var(--rojo)':'var(--dorado)';
-    const brd = apta?'var(--verde-menta)':hasZero?'#f5c6c2':'var(--dorado)';
+    const u = predios[predios.length-1];
+    const apta = u.puntajes?.esApto;
+    nm.textContent  = u.reserva||'Mi reserva';
+    sub.textContent = `👤 ${u.propietario||'—'} · ${predios.length} predio${predios.length>1?'s':''}`;
+    st.textContent  = apta ? '✅ Apto PSA' : '🚫 No apto';
+    const bg  = apta ? '#e8f5f0' : '#fff0ed';
+    const col = apta ? 'var(--verde-medio)' : 'var(--rojo)';
+    const brd = apta ? 'var(--verde-menta)' : '#f5c6c2';
     st.style.cssText=`background:${bg};color:${col};border-color:${brd};margin-left:auto;font-size:11px;font-weight:700;padding:5px 10px;border-radius:20px;border:1px solid;white-space:nowrap;`;
   }
 }
